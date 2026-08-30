@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CYBERM Security News — Stay current with the latest CVEs, threat intelligence, breaches, and cybersecurity industry news.">
+    <title>CYBERM — Security News</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-symbol">CM</div>
+                    <span class="logo-text">CYBER<span>M</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Tools</a>
+                    <a href="guides.html">Guides</a>
+                    <a href="news.html" class="active">News</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="dashboard.html" class="login">Log in</a>
+                    <a href="dashboard.html" class="nav-cta">Get Started <i data-lucide="arrow-up-right"></i></a>
+                    <button class="mobile-menu" aria-label="Open menu"><i data-lucide="menu"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-number">08 / SECURITY NEWS</div>
+                <h1>Stay ahead<br><em>of the threat.</em></h1>
+                <p>Critical CVEs, threat actor campaigns, patch alerts, and industry intelligence — filtered for the people who actually need to act on them.</p>
+            </div>
+        </section>
+
+        <!-- Featured Article -->
+        <section style="padding: 70px 0 0; background: var(--cream);">
+            <div class="container">
+                <div class="featured-card reveal">
+                    <div class="featured-card-inner">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+                            <span class="tag tag-orange">CRITICAL CVE</span>
+                            <span class="news-date" style="color:rgba(255,255,255,0.45);">30 AUG 2026</span>
+                        </div>
+                        <h2>CVSS 9.8: Remote Code Execution in<br>Apache HTTP Server 2.4.x</h2>
+                        <p>A critical pre-auth RCE vulnerability (CVE-2026-33142) has been disclosed affecting Apache HTTPD versions 2.4.0 through 2.4.61. Patch immediately — active exploitation detected in the wild with weaponized PoC publicly available.</p>
+                        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+                            <a href="#" class="btn-light">
+                                Read Full Advisory <i data-lucide="arrow-right"></i>
+                            </a>
+                            <div style="display:flex;gap:8px;">
+                                <span class="tag" style="background:rgba(255,80,80,0.2);color:#ff8080;border-color:rgba(255,80,80,0.3);">CVSS 9.8</span>
+                                <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.15);">Apache HTTPD</span>
+                                <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.65);border-color:rgba(255,255,255,0.15);">Patch Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Row -->
+        <section style="padding: 40px 0 20px; background: var(--cream);">
+            <div class="container">
+                <div class="filter-row">
+                    <span class="tag tag-black">All News</span>
+                    <span class="tag tag-muted">CVE Alerts</span>
+                    <span class="tag tag-muted">Threat Intel</span>
+                    <span class="tag tag-muted">Ransomware</span>
+                    <span class="tag tag-muted">Patch Tuesday</span>
+                    <span class="tag tag-muted">Industry</span>
+                    <span class="tag tag-muted">Research</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section style="padding: 20px 0 0; background: var(--cream);">
+            <div class="container">
+                <div class="card-grid reveal" style="border-top:1px solid var(--line);">
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">THREAT INTEL</span>
+                            <span class="news-date">29 AUG 2026</span>
+                        </div>
+                        <h3>BlackCat Ransomware Returns with New Evasion Techniques</h3>
+                        <p>ALPHV/BlackCat operators have resumed operations with updated malware that disables Windows Defender before encrypting. New indicators of compromise published.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">CVE ALERT</span>
+                            <span class="news-date">28 AUG 2026</span>
+                        </div>
+                        <h3>Critical Auth Bypass in Fortinet FortiGate — Patch Now</h3>
+                        <p>CVE-2026-31892 allows unauthenticated access to the management interface on FortiGate firewalls. Approximately 87,000 exposed devices identified via Shodan scanning.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">RESEARCH</span>
+                            <span class="news-date">27 AUG 2026</span>
+                        </div>
+                        <h3>New Supply Chain Attack Targets npm Packages with 50M+ Weekly Downloads</h3>
+                        <p>Researchers discovered a dependency confusion campaign inserting malicious code into popular Node.js packages that exfiltrates environment variables and credentials on install.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">PATCH TUESDAY</span>
+                            <span class="news-date">26 AUG 2026</span>
+                        </div>
+                        <h3>Microsoft Patches 142 Vulnerabilities Including 6 Zero-Days</h3>
+                        <p>August Patch Tuesday addresses critical flaws in Windows Kernel, Outlook, and Exchange Server. Two zero-days actively exploited in ransomware campaigns prior to disclosure.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">INDUSTRY</span>
+                            <span class="news-date">25 AUG 2026</span>
+                        </div>
+                        <h3>CISA Adds 8 New Vulnerabilities to Known Exploited Catalog</h3>
+                        <p>Federal agencies have until September 12 to remediate vulnerabilities in Cisco IOS XE, Palo Alto PAN-OS, and Ivanti Connect Secure per new BOD-22-01 guidance.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">THREAT INTEL</span>
+                            <span class="news-date">24 AUG 2026</span>
+                        </div>
+                        <h3>APT29 Targets European Government Networks via Spear-Phishing</h3>
+                        <p>Cozy Bear resumes operations targeting EU foreign ministry staff with weaponized PDF attachments that exploit an unpatched Adobe Acrobat reader vulnerability.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">RESEARCH</span>
+                            <span class="news-date">23 AUG 2026</span>
+                        </div>
+                        <h3>RowHammer Attack Compromises Cloud VMs in Cross-Tenant Scenarios</h3>
+                        <p>Academic researchers demonstrate DRAM bit-flip attacks achieving privilege escalation and data leakage across virtualized cloud instances, affecting major hypervisors.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">CVE ALERT</span>
+                            <span class="news-date">22 AUG 2026</span>
+                        </div>
+                        <h3>WordPress Plugin with 3M Installs Has Stored XSS Vulnerability</h3>
+                        <p>A popular form builder plugin failed to sanitize submitted content, allowing stored cross-site scripting that could achieve admin takeover. Update to v5.1.4 immediately.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                    <div class="news-card">
+                        <div class="news-meta">
+                            <span class="tag tag-orange">INDUSTRY</span>
+                            <span class="news-date">21 AUG 2026</span>
+                        </div>
+                        <h3>Cybersecurity Workforce Gap Reaches 4.7 Million Open Roles Globally</h3>
+                        <p>ISC² annual workforce study finds demand continues to outpace supply, with cloud security, AI security, and penetration testing roles commanding the highest premiums.</p>
+                        <a href="#" class="news-read-link">Read more <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="orange-section" style="margin-top:0;">
+            <div class="container">
+                <div class="orange-grid">
+                    <div class="reveal">
+                        <div class="section-number" style="color:rgba(255,255,255,0.7);">09 / STAY INFORMED</div>
+                        <h2>
+                            Never miss<br>
+                            <strong>a critical alert.</strong>
+                        </h2>
+                        <p>CYBERM curates the most actionable security news and sends a concise weekly digest — no marketing, no noise.</p>
+                    </div>
+                    <div class="reveal">
+                        <div style="background:rgba(0,0,0,0.18);padding:36px;border-radius:2px;">
+                            <div class="section-number" style="color:rgba(255,255,255,0.6);margin-bottom:16px;">WEEKLY DIGEST</div>
+                            <p style="color:rgba(255,255,255,0.8);font-size:14px;margin-bottom:22px;line-height:1.6;">
+                                Critical CVEs · Threat campaigns · Tool releases<br>Every Saturday morning.
+                            </p>
+                            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                                <input
+                                    type="email"
+                                    placeholder="your@email.com"
+                                    style="flex:1;padding:13px 16px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:white;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;border-radius:2px;min-width:200px;"
+                                >
+                                <button
+                                    class="btn-light"
+                                    style="margin-top:0;white-space:nowrap;"
+                                >
+                                    Subscribe <i data-lucide="arrow-right"></i>
+                                </button>
+                            </div>
+                            <p style="margin-top:12px;font-size:10px;color:rgba(255,255,255,0.4);">No spam. Unsubscribe anytime. Free forever.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" style="padding-top:40px;">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <div class="cta-content">
+                        <div class="eyebrow">EXPLORE THE PLATFORM</div>
+                        <h2>Put the news<br><span>to work.</span></h2>
+                        <p>Every CVE you read about here — investigate it in the workspace, look it up in our tools, or discuss it with the AI assistant.</p>
+                        <a href="index.html#platform" class="btn-primary">
+                            Explore Platform
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-symbol">CM</div>
+                        <span class="logo-text">CYBER<span>M</span></span>
+                    </a>
+                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PLATFORM</h4>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Security Tools</a>
+                    <a href="utilities.html">Utilities</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>LEARN</h4>
+                    <a href="resources.html">Resources</a>
+                    <a href="news.html">Security News</a>
+                    <a href="guides.html">Tutorials</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 CYBERM</span>
+                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

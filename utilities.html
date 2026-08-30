@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CYBERM Developer Security Utilities — Base64, Hash, JWT, Subnet, URL, Password Generator and more — all in-browser, no installs needed.">
+    <title>CYBERM — Security Utilities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-symbol">CM</div>
+                    <span class="logo-text">CYBER<span>M</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Tools</a>
+                    <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="dashboard.html" class="login">Log in</a>
+                    <a href="dashboard.html" class="nav-cta">Get Started <i data-lucide="arrow-up-right"></i></a>
+                    <button class="mobile-menu" aria-label="Open menu"><i data-lucide="menu"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-number">05 / UTILITIES</div>
+                <h1>Developer security<br><em>utilities.</em></h1>
+                <p>Ten interactive tools running entirely in your browser — no installs, no sign-up required. Encode, decode, hash, and analyse instantly.</p>
+            </div>
+        </section>
+
+        <!-- Utilities Grid -->
+        <section class="inner-section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <div><div class="section-number">01 / ENCODING</div></div>
+                    <h2>Transform<br><span>your data.</span></h2>
+                </div>
+
+                <div class="card-grid-free reveal">
+
+                    <!-- Base64 -->
+                    <div class="utility-card" id="util-base64">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="code"></i></div>
+                            <h3>Base64 Encoder / Decoder</h3>
+                        </div>
+                        <textarea class="utility-input" id="b64-input" rows="3" placeholder="Enter text or Base64 string…"></textarea>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="b64Encode()">
+                                <i data-lucide="arrow-right"></i> Encode
+                            </button>
+                            <button class="utility-btn" onclick="b64Decode()">
+                                <i data-lucide="arrow-left"></i> Decode
+                            </button>
+                        </div>
+                        <div class="utility-output" id="b64-output">Output will appear here…</div>
+                    </div>
+
+                    <!-- Hex -->
+                    <div class="utility-card" id="util-hex">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="binary"></i></div>
+                            <h3>Hex Encoder / Decoder</h3>
+                        </div>
+                        <textarea class="utility-input" id="hex-input" rows="3" placeholder="Enter text or hex string (e.g. 48 65 6c 6c 6f)…"></textarea>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="hexEncode()">
+                                <i data-lucide="arrow-right"></i> Text → Hex
+                            </button>
+                            <button class="utility-btn" onclick="hexDecode()">
+                                <i data-lucide="arrow-left"></i> Hex → Text
+                            </button>
+                        </div>
+                        <div class="utility-output" id="hex-output">Output will appear here…</div>
+                    </div>
+
+                    <!-- URL Encode -->
+                    <div class="utility-card" id="util-url">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="link"></i></div>
+                            <h3>URL Encoder / Decoder</h3>
+                        </div>
+                        <textarea class="utility-input" id="url-input" rows="3" placeholder="Enter a URL or encoded string…"></textarea>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="urlEncode()">
+                                <i data-lucide="arrow-right"></i> Encode
+                            </button>
+                            <button class="utility-btn" onclick="urlDecode()">
+                                <i data-lucide="arrow-left"></i> Decode
+                            </button>
+                        </div>
+                        <div class="utility-output" id="url-output">Output will appear here…</div>
+                    </div>
+
+                </div>
+
+                <div class="section-header reveal" style="margin-top:80px;">
+                    <div><div class="section-number">02 / HASHING</div></div>
+                    <h2>Compute<br><span>hashes.</span></h2>
+                </div>
+
+                <div class="card-grid-free reveal">
+
+                    <!-- Hash Calculator -->
+                    <div class="utility-card" id="util-hash">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="hash"></i></div>
+                            <h3>Hash Calculator</h3>
+                        </div>
+                        <textarea class="utility-input" id="hash-input" rows="3" placeholder="Enter text to hash…"></textarea>
+                        <select class="utility-select" id="hash-algo">
+                            <option value="SHA-1">SHA-1</option>
+                            <option value="SHA-256" selected>SHA-256</option>
+                            <option value="SHA-512">SHA-512</option>
+                        </select>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="computeHash()">
+                                <i data-lucide="zap"></i> Compute Hash
+                            </button>
+                        </div>
+                        <div class="utility-output" id="hash-output">Hash will appear here…</div>
+                    </div>
+
+                    <!-- Text Case Converter -->
+                    <div class="utility-card" id="util-case">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="type"></i></div>
+                            <h3>Text Case Converter</h3>
+                        </div>
+                        <textarea class="utility-input" id="case-input" rows="3" placeholder="Enter text to convert…"></textarea>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="convertCase('upper')">UPPER</button>
+                            <button class="utility-btn" onclick="convertCase('lower')">lower</button>
+                            <button class="utility-btn" onclick="convertCase('title')">Title</button>
+                            <button class="utility-btn" onclick="convertCase('camel')">camelCase</button>
+                            <button class="utility-btn" onclick="convertCase('snake')">snake_case</button>
+                        </div>
+                        <div class="utility-output" id="case-output">Output will appear here…</div>
+                    </div>
+
+                    <!-- JWT Decoder -->
+                    <div class="utility-card" id="util-jwt">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="key-round"></i></div>
+                            <h3>JWT Decoder</h3>
+                        </div>
+                        <textarea class="utility-input" id="jwt-input" rows="3" placeholder="Paste a JWT token (eyJ…)"></textarea>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="jwtDecode()">
+                                <i data-lucide="unlock"></i> Decode JWT
+                            </button>
+                        </div>
+                        <div class="utility-output" id="jwt-output">Decoded payload will appear here…</div>
+                    </div>
+
+                </div>
+
+                <div class="section-header reveal" style="margin-top:80px;">
+                    <div><div class="section-number">03 / NETWORK</div></div>
+                    <h2>Calculate<br><span>subnets.</span></h2>
+                </div>
+
+                <div class="card-grid-free reveal">
+
+                    <!-- Subnet Calculator -->
+                    <div class="utility-card" id="util-subnet">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="network"></i></div>
+                            <h3>Subnet Calculator</h3>
+                        </div>
+                        <input class="utility-input" id="subnet-input" type="text" placeholder="Enter IP/CIDR — e.g. 192.168.1.0/24">
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="calcSubnet()">
+                                <i data-lucide="calculator"></i> Calculate
+                            </button>
+                        </div>
+                        <div class="utility-output" id="subnet-output">Results will appear here…</div>
+                    </div>
+
+                    <!-- Password Generator -->
+                    <div class="utility-card" id="util-pass">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="lock"></i></div>
+                            <h3>Password Generator</h3>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <label class="form-label" style="margin-bottom:0;white-space:nowrap;">Length:</label>
+                            <input type="range" id="pass-length" min="8" max="64" value="20" style="flex:1;" oninput="document.getElementById('pass-len-display').textContent=this.value">
+                            <span id="pass-len-display" style="font-family:'Manrope',sans-serif;font-weight:700;font-size:15px;min-width:28px;">20</span>
+                        </div>
+                        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;font-size:12px;">
+                            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                                <input type="checkbox" id="pass-upper" checked> Uppercase (A–Z)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                                <input type="checkbox" id="pass-lower" checked> Lowercase (a–z)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                                <input type="checkbox" id="pass-nums" checked> Numbers (0–9)
+                            </label>
+                            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                                <input type="checkbox" id="pass-syms"> Symbols (!@#$)
+                            </label>
+                        </div>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="generatePassword()">
+                                <i data-lucide="refresh-cw"></i> Generate
+                            </button>
+                            <button class="utility-btn" onclick="copyOutput('pass-output')">
+                                <i data-lucide="copy"></i> Copy
+                            </button>
+                        </div>
+                        <div class="utility-output" id="pass-output">Password will appear here…</div>
+                    </div>
+
+                    <!-- Header Analyzer -->
+                    <div class="utility-card" id="util-headers">
+                        <div class="utility-card-header">
+                            <div class="tool-icon" style="margin-bottom:0;width:32px;height:32px;"><i data-lucide="list"></i></div>
+                            <h3>HTTP Header Analyzer</h3>
+                        </div>
+                        <textarea class="utility-input" id="header-input" rows="5" placeholder="Paste raw HTTP headers here…&#10;Content-Type: application/json&#10;Authorization: Bearer eyJ…&#10;X-Frame-Options: DENY"></textarea>
+                        <div class="utility-btn-group">
+                            <button class="utility-btn" onclick="analyzeHeaders()">
+                                <i data-lucide="scan-search"></i> Analyze
+                            </button>
+                        </div>
+                        <div class="utility-output" id="header-output">Parsed headers will appear here…</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" style="padding-top:0;">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <div class="cta-content">
+                        <div class="eyebrow">NEED A DIFFERENT TOOL?</div>
+                        <h2>More utilities<br><span>coming soon.</span></h2>
+                        <p>We're building more interactive tools. Suggest what you need and we'll prioritize accordingly.</p>
+                        <a href="contact.html" class="btn-primary">
+                            Suggest a Utility
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-symbol">CM</div>
+                        <span class="logo-text">CYBER<span>M</span></span>
+                    </a>
+                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PLATFORM</h4>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Security Tools</a>
+                    <a href="utilities.html">Utilities</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>LEARN</h4>
+                    <a href="resources.html">Resources</a>
+                    <a href="news.html">Security News</a>
+                    <a href="guides.html">Tutorials</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 CYBERM</span>
+                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="utilities.js"></script>
+
+</body>
+
+</html>

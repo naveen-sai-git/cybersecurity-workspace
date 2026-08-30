@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CYBERM Guides — Curated cybersecurity guides, tutorials, and walkthroughs for every skill level.">
+    <title>CYBERM — Guides</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-symbol">CM</div>
+                    <span class="logo-text">CYBER<span>M</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Tools</a>
+                    <a href="guides.html" class="active">Guides</a>
+                    <a href="news.html">News</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="dashboard.html" class="login">Log in</a>
+                    <a href="dashboard.html" class="nav-cta">Get Started <i data-lucide="arrow-up-right"></i></a>
+                    <button class="mobile-menu" aria-label="Open menu"><i data-lucide="menu"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-number">06 / LEARNING GUIDES</div>
+                <h1>Guides that cut<br><em>through the noise.</em></h1>
+                <p>Practical, structured guides written for people who learn by doing — not by reading textbooks.</p>
+            </div>
+        </section>
+
+        <!-- Featured Guide -->
+        <section style="padding: 70px 0 2px; background: var(--cream);">
+            <div class="container">
+                <div class="featured-card reveal">
+                    <div class="featured-card-inner">
+                        <span class="tag tag-orange">FEATURED GUIDE</span>
+                        <h2>Getting Started with<br>Ethical Hacking</h2>
+                        <p>A complete beginner's walkthrough — from setting up your first Kali Linux VM, through your first network scan, to completing your first intentionally vulnerable machine. No prior security experience required.</p>
+                        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+                            <a href="#" class="btn-light">
+                                Read Guide <i data-lucide="arrow-right"></i>
+                            </a>
+                            <div style="display:flex;gap:8px;">
+                                <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.15);">Beginner</span>
+                                <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.15);">~45 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Row -->
+        <section style="padding: 40px 0 20px; background: var(--cream);">
+            <div class="container">
+                <div class="filter-row">
+                    <span class="tag tag-black">All Guides</span>
+                    <span class="tag tag-muted">Web Security</span>
+                    <span class="tag tag-muted">Network Security</span>
+                    <span class="tag tag-muted">Malware &amp; Forensics</span>
+                    <span class="tag tag-muted">Cryptography</span>
+                    <span class="tag tag-muted">OSINT</span>
+                    <span class="tag tag-muted">CTF Walkthroughs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guides Grid -->
+        <section style="padding: 20px 0 130px; background: var(--cream);">
+            <div class="container">
+                <div class="card-grid reveal" style="border-top:1px solid var(--line);">
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">WEB SECURITY</span>
+                        <h3>OWASP Top 10 Explained</h3>
+                        <p>A deep dive into all ten vulnerability categories with real-world examples, code snippets, and defensive recommendations for developers and pentesters.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">NETWORK SECURITY</span>
+                        <h3>Wireshark for Beginners</h3>
+                        <p>Capture your first packets, filter traffic, follow streams, and identify suspicious behaviour in network captures. Step-by-step with screenshots.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Beginner</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">WEB SECURITY</span>
+                        <h3>SQL Injection Deep Dive</h3>
+                        <p>From basic UNION attacks to blind time-based injection — understand every technique and learn to write WAF bypass payloads from scratch.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Advanced</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">LAB SETUP</span>
+                        <h3>Build Your Home Security Lab</h3>
+                        <p>Set up a complete local lab with Kali Linux, Metasploitable, and vulnerable web apps. Everything you need to practice safely without a cloud bill.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Beginner</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">CTF</span>
+                        <h3>CTF Beginner's Handbook</h3>
+                        <p>How to approach Capture The Flag competitions — web challenges, binary exploitation, reverse engineering, and cryptography. Your first flag awaits.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Beginner</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">CRYPTOGRAPHY</span>
+                        <h3>Hashing Algorithms Explained</h3>
+                        <p>MD5, SHA-1, SHA-256, bcrypt — what makes a hash function secure, how collisions happen, and why your password storage choice matters enormously.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">OSINT</span>
+                        <h3>OSINT Techniques for Investigators</h3>
+                        <p>Systematic open-source intelligence gathering — email pivoting, reverse image search, Shodan queries, metadata extraction, and digital footprint analysis.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">MALWARE</span>
+                        <h3>Malware Analysis — First Steps</h3>
+                        <p>Set up a safe sandbox, perform static and dynamic analysis, identify IOCs, and write a structured threat report. Hands-on with real malware samples.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Advanced</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">NETWORK SECURITY</span>
+                        <h3>Nmap Mastery Guide</h3>
+                        <p>Every Nmap scan type explained with timing, evasion, script scanning, and output formatting. Go from basic port scan to professional network audit.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">WEB SECURITY</span>
+                        <h3>Burp Suite — Complete Guide</h3>
+                        <p>Master the Proxy, Repeater, Intruder, and Scanner. Learn to intercept requests, fuzz parameters, and find authentication vulnerabilities efficiently.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">CRYPTOGRAPHY</span>
+                        <h3>Understanding TLS/SSL</h3>
+                        <p>How HTTPS works under the hood — handshakes, certificates, cipher suites, common misconfigurations, and tools for testing TLS security.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Intermediate</span>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <span class="tag tag-orange">FORENSICS</span>
+                        <h3>Memory Forensics with Volatility</h3>
+                        <p>Analyse RAM dumps to uncover running processes, network connections, injected code, and malware artefacts that disappear when a system reboots.</p>
+                        <div class="guide-card-footer">
+                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
+                            <span class="tag tag-muted">Advanced</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align:center;margin-top:50px;" class="reveal">
+                    <a href="resources.html" class="btn-secondary">
+                        Browse All Resources
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" style="padding-top:0;">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <div class="cta-content">
+                        <div class="eyebrow">SAVE YOUR PROGRESS</div>
+                        <h2>Track what you've<br><span>already learned.</span></h2>
+                        <p>Create a workspace to bookmark guides, track your progress, and pick up exactly where you left off.</p>
+                        <a href="dashboard.html" class="btn-primary">
+                            Create Free Workspace
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-symbol">CM</div>
+                        <span class="logo-text">CYBER<span>M</span></span>
+                    </a>
+                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PLATFORM</h4>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Security Tools</a>
+                    <a href="utilities.html">Utilities</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>LEARN</h4>
+                    <a href="resources.html">Resources</a>
+                    <a href="news.html">Security News</a>
+                    <a href="guides.html">Tutorials</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 CYBERM</span>
+                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

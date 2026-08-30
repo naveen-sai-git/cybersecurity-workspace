@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact CYBERM — Get in touch with our team. Questions, feedback, tool suggestions, or partnership inquiries.">
+    <title>CYBERM — Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <div class="logo-symbol">CM</div>
+                    <span class="logo-text">CYBER<span>M</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Tools</a>
+                    <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-actions">
+                    <a href="dashboard.html" class="login">Log in</a>
+                    <a href="dashboard.html" class="nav-cta">Get Started <i data-lucide="arrow-up-right"></i></a>
+                    <button class="mobile-menu" aria-label="Open menu"><i data-lucide="menu"></i></button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-number">10 / CONTACT</div>
+                <h1>We're<br><em>listening.</em></h1>
+                <p>Questions, feedback, tool suggestions, bug reports, or just want to say hello — we read everything.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Contact Section -->
+        <section class="inner-section">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;" class="reveal">
+
+                    <!-- Contact Info -->
+                    <div>
+                        <div class="section-number" style="margin-bottom:24px;">01 / REACH US</div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-label">Email</div>
+                                <div class="contact-info-value">hello@cyberm.io</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i data-lucide="message-circle"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-label">Community Discord</div>
+                                <div class="contact-info-value">discord.gg/cyberm</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i data-lucide="shield-alert"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-label">Security Reports</div>
+                                <div class="contact-info-value">security@cyberm.io</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i data-lucide="lightbulb"></i>
+                            </div>
+                            <div>
+                                <div class="contact-info-label">Feature Requests</div>
+                                <div class="contact-info-value">github.com/cyberm/feedback</div>
+                            </div>
+                        </div>
+
+                        <!-- Response time note -->
+                        <div
+                            style="margin-top:30px;padding:20px;background:rgba(232,130,46,0.07);border-left:3px solid var(--orange);">
+                            <div
+                                style="font-size:11px;font-weight:700;letter-spacing:0.5px;color:var(--orange);text-transform:uppercase;margin-bottom:6px;">
+                                Response Time</div>
+                            <p style="font-size:12px;color:var(--gray);line-height:1.65;">We aim to respond to all
+                                messages within 48 hours on business days. For urgent security reports, expect a
+                                response within 24 hours.</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div>
+                        <div class="section-number" style="margin-bottom:24px;">02 / SEND A MESSAGE</div>
+
+                        <form id="contact-form" onsubmit="handleSubmit(event)">
+
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-name">Name</label>
+                                    <input class="form-input" id="contact-name" type="text" placeholder="Your name"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="contact-email">Email</label>
+                                    <input class="form-input" id="contact-email" type="email"
+                                        placeholder="your@email.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contact-subject">Subject</label>
+                                <select class="form-select" id="contact-subject">
+                                    <option value="">Select a topic…</option>
+                                    <option value="general">General enquiry</option>
+                                    <option value="feedback">Platform feedback</option>
+                                    <option value="tool-suggestion">Tool / resource suggestion</option>
+                                    <option value="bug">Bug report</option>
+                                    <option value="security">Security vulnerability report</option>
+                                    <option value="partnership">Partnership / collaboration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="contact-message">Message</label>
+                                <textarea class="form-textarea" id="contact-message"
+                                    placeholder="Tell us what's on your mind. Be as detailed as you like."
+                                    required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                                Send Message
+                                <i data-lucide="send"></i>
+                            </button>
+
+                            <div id="form-success"
+                                style="display:none;margin-top:16px;padding:14px 18px;background:rgba(76,155,103,0.1);border:1px solid rgba(76,155,103,0.25);border-radius:2px;color:#4C9B67;font-size:13px;font-weight:500;">
+                                ✓ Message sent. We'll get back to you within 48 hours.
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section style="padding: 0 0 100px;">
+            <div class="container">
+                <div class="inner-section-header reveal">
+                    <div>
+                        <div class="section-number">03 / FAQ</div>
+                    </div>
+                    <div>
+                        <h2>Common<br><span>questions.</span></h2>
+                    </div>
+                </div>
+
+                <div style="border-top:1px solid var(--line);">
+                    <div class="faq-item reveal">
+                        <div class="faq-number">01</div>
+                        <div>
+                            <div class="faq-question">Is CYBERM completely free?</div>
+                            <div class="faq-answer">Yes. Roadmaps, tools directory, developer utilities, guides, and
+                                security news are all free with no registration required. We may introduce optional
+                                premium features in the future, but the core platform will always remain free.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-number">02</div>
+                        <div>
+                            <div class="faq-question">Do the utilities send my data anywhere?</div>
+                            <div class="faq-answer">No. All utility tools (Base64, Hash, JWT Decoder, Subnet Calculator,
+                                etc.) run entirely in your browser using client-side JavaScript. No input you enter is
+                                transmitted to any server. Your data never leaves your machine.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-number">03</div>
+                        <div>
+                            <div class="faq-question">How do I suggest a tool, guide, or resource?</div>
+                            <div class="faq-answer">Use the contact form above, select "Tool / resource suggestion" as
+                                the topic, and describe what you'd like to see added and why. We review every suggestion
+                                and add the most-requested items regularly.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-number">04</div>
+                        <div>
+                            <div class="faq-question">Can I contribute content to CYBERM?</div>
+                            <div class="faq-answer">Absolutely. We welcome guide contributions from experienced
+                                practitioners. If you want to write a guide, create a cheat sheet, or contribute to the
+                                tools directory, reach out via the contact form with "Partnership / collaboration"
+                                selected.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community CTA -->
+        <section class="orange-section">
+            <div class="container">
+                <div class="orange-grid">
+                    <div class="reveal">
+                        <div class="section-number" style="color:rgba(255,255,255,0.7);">JOIN US</div>
+                        <h2>
+                            The community<br>
+                            <strong>is the platform.</strong>
+                        </h2>
+                        <p>CYBERM is built with and for the security community. Join our Discord server to connect with
+                            practitioners, share writeups, ask questions, and shape the direction of the platform.</p>
+                        <a href="#" class="btn-light">
+                            Join Discord <i data-lucide="arrow-up-right"></i>
+                        </a>
+                    </div>
+                    <div class="terminal reveal">
+                        <div class="terminal-top">
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-title">cyberm / community</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-orange">@researcher:</span>
+                                <span class="terminal-white"> just found a stored XSS in a popular CMS</span>
+                            </div>
+                            <br>
+                            <div class="terminal-line">
+                                <span class="terminal-orange">@defender:</span>
+                                <span class="terminal-white"> which plugin? adding to our WAF rules</span>
+                            </div>
+                            <br>
+                            <div class="terminal-line">
+                                <span class="terminal-orange">@student:</span>
+                                <span class="terminal-white"> can someone explain this metasploit output?</span>
+                            </div>
+                            <br>
+                            <div class="terminal-line">
+                                ├─ SUID binary found on target
+                            </div>
+                            <div class="terminal-line">
+                                └─ privilege escalation opportunity
+                            </div>
+                            <br>
+                            <div class="terminal-line">
+                                <span class="terminal-orange">cyberm:</span>
+                                <span class="terminal-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-symbol">CM</div>
+                        <span class="logo-text">CYBER<span>M</span></span>
+                    </a>
+                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PLATFORM</h4>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="tools.html">Security Tools</a>
+                    <a href="utilities.html">Utilities</a>
+                    <a href="guides.html">Guides</a>
+                </div>
+                <div class="footer-column">
+                    <h4>LEARN</h4>
+                    <a href="resources.html">Resources</a>
+                    <a href="news.html">Security News</a>
+                    <a href="guides.html">Tutorials</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 CYBERM</span>
+                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('contact-form').reset();
+            setTimeout(() => {
+                document.getElementById('form-success').style.display = 'none';
+            }, 6000);
+        }
+    </script>
+
+</body>
+
+</html>
