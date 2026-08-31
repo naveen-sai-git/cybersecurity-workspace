@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CYBERM Dashboard — Your personalized cybersecurity learning hub. Track roadmap progress, search all resources, and access CyberM AI.">
-    <title>CYBERM — Dashboard</title>
+    <meta name="description" content="CYBERM Dashboard â€” Your personalized cybersecurity learning hub. Track progress, resume courses, and launch security tools instantly.">
+    <title>CYBERM â€” Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- ─── HEADER ─── -->
+    <!-- HEADER -->
     <header id="header">
         <div class="container">
             <nav>
@@ -45,384 +45,307 @@
 
     <main>
 
-        <!-- ─── SECTION 1: GREETING + UNIVERSAL SEARCH ─── -->
-        <section class="page-hero" style="padding-bottom: 0;">
+        <!-- â–ˆâ–ˆâ–ˆ SECTION 1: GREETING HERO + STAT CARDS â–ˆâ–ˆâ–ˆ -->
+        <section class="inner-page-hero" style="padding-bottom:50px;">
             <div class="container">
 
-                <!-- Greeting Row -->
-                <div class="dash-greeting-top reveal">
+                <!-- Greeting row -->
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px;" class="reveal">
                     <div>
                         <div class="section-number">01 / YOUR WORKSPACE</div>
-                        <h1>Good evening, <em>Navee.</em></h1>
-                        <p style="margin-top: 12px; color: rgba(255,255,255,0.55); font-size: 15px;">
-                            You're on Stage 3 of 5 in the SOC Analyst path. Keep going.
+                        <h1 style="font-family:'Manrope',sans-serif;font-size:clamp(36px,4.5vw,58px);font-weight:800;letter-spacing:-2.5px;color:white;margin-top:12px;line-height:1;">
+                            Good evening, <em style="color:var(--orange);font-style:normal;">Navee.</em>
+                        </h1>
+                        <p style="margin-top:14px;color:rgba(255,255,255,0.45);font-size:14px;">
+                            Stage 3 of 5 in the SOC Analyst path. You're in the top 12% of active learners this week.
                         </p>
                     </div>
-                    <div class="streak-badge">
-                        <i data-lucide="flame"></i> 7-Day Streak
+                    <div style="display:flex;align-items:center;gap:10px;padding:12px 20px;background:rgba(232,130,46,0.12);border:1px solid rgba(232,130,46,0.25);border-radius:50px;color:var(--orange-light);font-size:12px;font-weight:700;white-space:nowrap;margin-top:18px;">
+                        <i data-lucide="flame" style="width:16px;height:16px;"></i>
+                        7-Day Streak
                     </div>
                 </div>
 
-                <!-- Universal Search Bar -->
-                <div class="dash-search-wrap reveal" id="search-wrap">
-                    <div class="dash-search-box" onclick="document.getElementById('dash-search-input').focus()">
-                        <i data-lucide="search"></i>
-                        <input
-                            type="text"
-                            id="dash-search-input"
-                            class="dash-search-input"
-                            placeholder="Search roadmaps, tools, guides, utilities, AI…"
-                            oninput="handleSearch(this.value)"
-                            onkeydown="handleSearchKey(event)"
-                            autocomplete="off"
-                        >
-                        <span class="dash-search-shortcut">Ctrl + K</span>
-                        <button class="utility-btn" style="flex-shrink:0;padding:10px 16px;"
-                                onclick="handleSearch(document.getElementById('dash-search-input').value)">
-                            <i data-lucide="arrow-right"></i>
-                        </button>
+                <!-- 4 Stat Cards -->
+                <div class="stat-cards-row reveal">
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i data-lucide="trending-up"></i></div>
+                        <div class="stat-card-value">68%</div>
+                        <div class="stat-card-label">Overall Progress</div>
+                        <div class="stat-card-change">â†‘ +4% this week</div>
                     </div>
-                    <div class="dash-search-results" id="search-results"></div>
-                </div>
-
-            </div>
-
-            <!-- Stats Bar at bottom of hero -->
-            <div style="background:rgba(255,255,255,0.05);border-top:1px solid rgba(255,255,255,0.07);">
-                <div class="container">
-                    <div class="hero-meta" style="border-top:none;padding:22px 0;margin:0;justify-content:flex-start;gap:50px;flex-wrap:wrap;">
-                        <div class="meta-item">
-                            <strong style="color:white;">68%</strong>
-                            <span>OVERALL PROGRESS</span>
-                        </div>
-                        <div class="meta-item" style="border-left:1px solid rgba(255,255,255,0.1);padding-left:50px;">
-                            <strong style="color:white;">Stage 3/5</strong>
-                            <span>SOC ANALYST PATH</span>
-                        </div>
-                        <div class="meta-item" style="border-left:1px solid rgba(255,255,255,0.1);padding-left:50px;">
-                            <strong style="color:white;">12</strong>
-                            <span>GUIDES READ</span>
-                        </div>
-                        <div class="meta-item" style="border-left:1px solid rgba(255,255,255,0.1);padding-left:50px;">
-                            <strong style="color:white;">7</strong>
-                            <span>DAY STREAK</span>
-                        </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i data-lucide="bookmark"></i></div>
+                        <div class="stat-card-value">14</div>
+                        <div class="stat-card-label">Saved Guides</div>
+                        <div class="stat-card-change">â†‘ +2 new</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i data-lucide="flask-conical"></i></div>
+                        <div class="stat-card-value">3</div>
+                        <div class="stat-card-label">Active Labs</div>
+                        <div class="stat-card-change">â†‘ 1 in progress</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card-icon"><i data-lucide="shield-check"></i></div>
+                        <div class="stat-card-value">84</div>
+                        <div class="stat-card-label">Security Score</div>
+                        <div class="stat-card-change">â†‘ +6 pts</div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- ─── SECTION 2: CONTINUE LEARNING (Interactive) ─── -->
-        <section class="inner-section" style="padding-top:70px;padding-bottom:30px;">
+        <!-- â–ˆâ–ˆâ–ˆ SECTION 2: WORKSPACE FRAME â–ˆâ–ˆâ–ˆ -->
+        <section style="padding:50px 0 80px;background:var(--cream);">
             <div class="container">
 
-                <div class="inner-section-header reveal" style="margin-bottom:30px;">
-                    <div><div class="section-number">02 / CONTINUE LEARNING</div></div>
-                    <div>
-                        <h2>Pick up where<br><span>you left off.</span></h2>
-                    </div>
-                </div>
+                <div class="db-workspace reveal" style="grid-template-columns:1fr;">
+                    <div class="db-main">
 
-                <div class="dash-continue-card reveal">
-                    <div class="dash-continue-inner">
-
-                        <!-- Left: Stage details -->
-                        <div>
-                            <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;">
-                                <span class="tag" style="background:rgba(232,130,46,0.16);color:var(--orange-light);border:none;font-size:10px;">ACTIVE ROADMAP</span>
-                                <span style="font-size:10px;color:rgba(255,255,255,0.38);font-weight:600;letter-spacing:0.8px;">SOC ANALYST PATH</span>
+                        <div class="db-main-header">
+                            <div>
+                                <div class="db-main-title">Continue Learning</div>
+                                <div style="font-size:10px;color:var(--gray);margin-top:3px;">Pick up where you left off</div>
                             </div>
+                            <div class="db-status">System Operational</div>
+                        </div>
 
-                            <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;letter-spacing:-1.2px;color:white;margin-bottom:10px;">
-                                Stage 3: Threat Detection<br>&amp; Log Analysis
-                            </h2>
-                            <p style="color:rgba(255,255,255,0.5);font-size:13px;line-height:1.65;max-width:500px;margin-bottom:26px;">
-                                Learn to identify malicious activity in security logs, write detection rules in SIEM platforms, and distinguish real threats from false positives.
-                            </p>
+                        <!-- Progress Cards (3 col) -->
+                        <div class="media-grid" style="grid-template-columns:repeat(3,1fr);margin-top:0;">
 
-                            <!-- Stage Pills Timeline -->
-                            <div class="dash-stage-pills">
-                                <div class="dash-stage-pill done">
-                                    <div class="dash-stage-dot"></div>
-                                    <span class="dash-stage-pill-label">Stage 1<br>Networking</span>
+                            <!-- Card 1: Active -->
+                            <div class="progress-card">
+                                <div class="progress-card-img" style="background:linear-gradient(135deg,#0e0e0e 0%,#1a1a2e 100%);">
+                                    <span style="font-size:38px;opacity:0.9;">ðŸ›¡ï¸</span>
+                                    <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);"></div>
                                 </div>
-                                <div class="dash-stage-connector done"></div>
-                                <div class="dash-stage-pill done">
-                                    <div class="dash-stage-dot"></div>
-                                    <span class="dash-stage-pill-label">Stage 2<br>Linux &amp; SIEM</span>
+                                <div class="progress-card-body">
+                                    <div class="progress-card-label">SOC Analyst Path Â· Stage 3</div>
+                                    <div class="progress-card-title">Threat Detection & Log Analysis</div>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar-header">
+                                            <span class="progress-bar-label">Progress</span>
+                                            <span class="progress-bar-pct">68%</span>
+                                        </div>
+                                        <div class="progress-bar-track">
+                                            <div class="progress-bar-fill" style="width:68%;"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="dash-stage-connector done"></div>
-                                <div class="dash-stage-pill active">
-                                    <div class="dash-stage-dot"></div>
-                                    <span class="dash-stage-pill-label">Stage 3<br>Detection</span>
-                                </div>
-                                <div class="dash-stage-connector"></div>
-                                <div class="dash-stage-pill">
-                                    <div class="dash-stage-dot"></div>
-                                    <span class="dash-stage-pill-label">Stage 4<br>IR</span>
-                                </div>
-                                <div class="dash-stage-connector"></div>
-                                <div class="dash-stage-pill">
-                                    <div class="dash-stage-dot"></div>
-                                    <span class="dash-stage-pill-label">Stage 5<br>Hunting</span>
+                                <div class="progress-card-footer">
+                                    <span class="progress-card-time"><i data-lucide="clock" style="width:10px;height:10px;vertical-align:middle;"></i> 4.5 hrs left</span>
+                                    <button class="resume-btn" onclick="window.location.href='roadmaps.html'">
+                                        Resume <i data-lucide="play"></i>
+                                    </button>
                                 </div>
                             </div>
 
-                            <!-- Topic Progress -->
-                            <div style="margin-top:24px;">
-                                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-                                    <span style="font-size:11px;color:rgba(255,255,255,0.42);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;">Stage 3 Progress</span>
-                                    <span style="font-size:11px;color:var(--orange);font-weight:700;">3 of 10 topics</span>
+                            <!-- Card 2 -->
+                            <div class="progress-card">
+                                <div class="progress-card-img" style="background:linear-gradient(135deg,#1a0a00 0%,#2d1500 100%);">
+                                    <span style="font-size:38px;opacity:0.9;">ðŸŒ</span>
+                                    <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);width:32%;"></div>
                                 </div>
-                                <div class="dash-topic-bar">
-                                    <div class="dash-topic-fill" id="topic-fill" style="width:30%;"></div>
+                                <div class="progress-card-body">
+                                    <div class="progress-card-label">Web App Security Â· Stage 2</div>
+                                    <div class="progress-card-title">OWASP Top 10 Vulnerabilities Deep Dive</div>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar-header">
+                                            <span class="progress-bar-label">Progress</span>
+                                            <span class="progress-bar-pct">32%</span>
+                                        </div>
+                                        <div class="progress-bar-track">
+                                            <div class="progress-bar-fill" style="width:32%;"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <!-- Topic Checklist -->
-                            <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px;">
-                                <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(232,130,46,0.85);">
-                                    <i data-lucide="circle-check" style="width:14px;height:14px;flex-shrink:0;"></i>
-                                    IDS/IPS Fundamentals
-                                </div>
-                                <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(232,130,46,0.85);">
-                                    <i data-lucide="circle-check" style="width:14px;height:14px;flex-shrink:0;"></i>
-                                    Log Sources &amp; Formats (Windows, Syslog, CEF)
-                                </div>
-                                <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(232,130,46,0.85);">
-                                    <i data-lucide="circle-check" style="width:14px;height:14px;flex-shrink:0;"></i>
-                                    Splunk Query Basics (SPL)
-                                </div>
-                                <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.5);">
-                                    <i data-lucide="circle" style="width:14px;height:14px;flex-shrink:0;"></i>
-                                    Writing Detection Rules
-                                    <span style="font-size:10px;background:rgba(232,130,46,0.15);color:var(--orange-light);padding:2px 8px;border-radius:2px;font-weight:700;margin-left:4px;">CURRENT</span>
-                                </div>
-                                <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,0.28);">
-                                    <i data-lucide="circle" style="width:14px;height:14px;flex-shrink:0;"></i>
-                                    Alert Triage &amp; Prioritisation
-                                </div>
-                                <div style="color:rgba(255,255,255,0.22);font-size:11px;padding-left:24px;font-style:italic;">
-                                    + 5 more topics in Stage 3
+                                <div class="progress-card-footer">
+                                    <span class="progress-card-time"><i data-lucide="clock" style="width:10px;height:10px;vertical-align:middle;"></i> 8 hrs left</span>
+                                    <button class="resume-btn" onclick="window.location.href='roadmaps.html'">
+                                        Resume <i data-lucide="play"></i>
+                                    </button>
                                 </div>
                             </div>
 
-                            <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;">
-                                <a href="roadmaps.html" class="btn-primary">
-                                    <i data-lucide="play"></i> Resume Learning
+                            <!-- Card 3 -->
+                            <div class="progress-card">
+                                <div class="progress-card-img" style="background:linear-gradient(135deg,#0a0a1a 0%,#10102e 100%);">
+                                    <span style="font-size:38px;opacity:0.9;">ðŸ”</span>
+                                    <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);width:89%;"></div>
+                                </div>
+                                <div class="progress-card-body">
+                                    <div class="progress-card-label">Ethical Hacking Â· Stage 1</div>
+                                    <div class="progress-card-title">Networking Fundamentals & Recon</div>
+                                    <div class="progress-bar-wrap">
+                                        <div class="progress-bar-header">
+                                            <span class="progress-bar-label">Progress</span>
+                                            <span class="progress-bar-pct">89%</span>
+                                        </div>
+                                        <div class="progress-bar-track">
+                                            <div class="progress-bar-fill" style="width:89%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress-card-footer">
+                                    <span class="progress-card-time"><i data-lucide="clock" style="width:10px;height:10px;vertical-align:middle;"></i> 45 min left</span>
+                                    <button class="resume-btn" onclick="window.location.href='roadmaps.html'">
+                                        Finish <i data-lucide="check"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div><!-- /progress cards -->
+
+                        <!-- Bottom: Activity + Bookmarked Tools -->
+                        <div class="db-bottom-grid">
+
+                            <!-- Activity Feed -->
+                            <div class="db-panel">
+                                <div class="db-panel-title">Recent Activity</div>
+
+                                <div class="db-activity-item">
+                                    <div class="db-activity-dot"><i data-lucide="book-open"></i></div>
+                                    <div class="db-activity-text">
+                                        <strong>Completed: Introduction to SIEM Platforms</strong>
+                                        <span>2 hours ago Â· SOC Analyst Path</span>
+                                    </div>
+                                </div>
+                                <div class="db-activity-item">
+                                    <div class="db-activity-dot"><i data-lucide="shield"></i></div>
+                                    <div class="db-activity-text">
+                                        <strong>Saved Guide: SQL Injection Cheatsheet</strong>
+                                        <span>5 hours ago Â· Web Security</span>
+                                    </div>
+                                </div>
+                                <div class="db-activity-item">
+                                    <div class="db-activity-dot"><i data-lucide="wrench"></i></div>
+                                    <div class="db-activity-text">
+                                        <strong>Opened Tool: Wireshark Network Analyzer</strong>
+                                        <span>Yesterday Â· Recon Tools</span>
+                                    </div>
+                                </div>
+                                <div class="db-activity-item">
+                                    <div class="db-activity-dot"><i data-lucide="newspaper"></i></div>
+                                    <div class="db-activity-text">
+                                        <strong>Read: Critical CVE-2026-3421 Analysis</strong>
+                                        <span>Yesterday Â· Threat Intelligence</span>
+                                    </div>
+                                </div>
+                                <div class="db-activity-item">
+                                    <div class="db-activity-dot"><i data-lucide="map"></i></div>
+                                    <div class="db-activity-text">
+                                        <strong>Started: Ethical Hacking â€” Stage 2</strong>
+                                        <span>2 days ago Â· Ethical Hacking Path</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Bookmarked Tools -->
+                            <div class="db-panel">
+                                <div class="db-panel-title">Bookmarked Tools</div>
+
+                                <a href="tools.html" class="db-tool-link">
+                                    <div class="db-tool-icon">NM</div>
+                                    <div>
+                                        <div style="font-size:11px;font-weight:700;">Nmap</div>
+                                        <div style="font-size:9px;color:var(--gray);font-weight:400;">Network Scanner Â· Recon</div>
+                                    </div>
+                                    <i data-lucide="arrow-up-right" style="width:13px;height:13px;margin-left:auto;opacity:0.4;"></i>
                                 </a>
-                                <a href="roadmaps.html" class="btn-secondary" style="border-color:rgba(255,255,255,0.14);color:rgba(255,255,255,0.75);">
-                                    View Full Roadmap <i data-lucide="arrow-right"></i>
+                                <a href="tools.html" class="db-tool-link">
+                                    <div class="db-tool-icon">BS</div>
+                                    <div>
+                                        <div style="font-size:11px;font-weight:700;">Burp Suite</div>
+                                        <div style="font-size:9px;color:var(--gray);font-weight:400;">Web Proxy Â· Web Security</div>
+                                    </div>
+                                    <i data-lucide="arrow-up-right" style="width:13px;height:13px;margin-left:auto;opacity:0.4;"></i>
                                 </a>
-                            </div>
-                        </div>
+                                <a href="tools.html" class="db-tool-link">
+                                    <div class="db-tool-icon">WS</div>
+                                    <div>
+                                        <div style="font-size:11px;font-weight:700;">Wireshark</div>
+                                        <div style="font-size:9px;color:var(--gray);font-weight:400;">Packet Analyzer Â· Network</div>
+                                    </div>
+                                    <i data-lucide="arrow-up-right" style="width:13px;height:13px;margin-left:auto;opacity:0.4;"></i>
+                                </a>
+                                <a href="tools.html" class="db-tool-link">
+                                    <div class="db-tool-icon">SH</div>
+                                    <div>
+                                        <div style="font-size:11px;font-weight:700;">Shodan</div>
+                                        <div style="font-size:9px;color:var(--gray);font-weight:400;">IoT Search Engine Â· OSINT</div>
+                                    </div>
+                                    <i data-lucide="arrow-up-right" style="width:13px;height:13px;margin-left:auto;opacity:0.4;"></i>
+                                </a>
+                                <a href="tools.html" class="db-tool-link">
+                                    <div class="db-tool-icon">MT</div>
+                                    <div>
+                                        <div style="font-size:11px;font-weight:700;">Metasploit</div>
+                                        <div style="font-size:9px;color:var(--gray);font-weight:400;">Exploit Framework Â· Pen Test</div>
+                                    </div>
+                                    <i data-lucide="arrow-up-right" style="width:13px;height:13px;margin-left:auto;opacity:0.4;"></i>
+                                </a>
 
-                        <!-- Right: Progress Ring -->
-                        <div class="progress-ring-wrap">
-                            <svg width="130" height="130" viewBox="0 0 130 130" style="transform:rotate(-90deg);">
-                                <circle class="progress-ring-track" cx="65" cy="65" r="58"></circle>
-                                <circle class="progress-ring-fill" id="progress-ring-fill" cx="65" cy="65" r="58"></circle>
-                            </svg>
-                            <div class="progress-ring-text">
-                                <div style="font-family:'Manrope',sans-serif;font-size:34px;font-weight:800;letter-spacing:-2px;color:white;line-height:1;">68%</div>
-                                <div style="font-size:9px;color:rgba(255,255,255,0.4);font-weight:700;letter-spacing:0.8px;margin-top:4px;">COMPLETE</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Switch Path CTA -->
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-top:20px;flex-wrap:wrap;gap:12px;" class="reveal">
-                    <p style="font-size:12px;color:var(--gray);">Also enrolled in: Ethical Hacking Path (not started), Web App Security (not started)</p>
-                    <a href="roadmaps.html" style="font-size:11px;font-weight:700;color:var(--orange);display:flex;align-items:center;gap:5px;">
-                        Switch path <i data-lucide="repeat" style="width:12px;height:12px;"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── SECTION 3: QUICK ACCESS ─── -->
-        <section style="padding:50px 0 70px;">
-            <div class="container">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;" class="reveal">
-                    <div class="section-number">03 / QUICK ACCESS</div>
-                    <span style="font-size:11px;color:var(--gray);">Everything from your dashboard</span>
-                </div>
-                <div class="dash-quick-grid reveal">
-                    <a href="roadmaps.html" class="dash-quick-card">
-                        <div class="dash-quick-icon"><i data-lucide="compass"></i></div>
-                        <div class="dash-quick-label">Roadmaps</div>
-                        <div class="dash-quick-count">3 career paths</div>
-                    </a>
-                    <a href="tools.html" class="dash-quick-card">
-                        <div class="dash-quick-icon"><i data-lucide="terminal"></i></div>
-                        <div class="dash-quick-label">Tools</div>
-                        <div class="dash-quick-count">36 curated tools</div>
-                    </a>
-                    <a href="utilities.html" class="dash-quick-card">
-                        <div class="dash-quick-icon"><i data-lucide="wrench"></i></div>
-                        <div class="dash-quick-label">Utilities</div>
-                        <div class="dash-quick-count">9 in-browser tools</div>
-                    </a>
-                    <a href="guides.html" class="dash-quick-card">
-                        <div class="dash-quick-icon"><i data-lucide="book-open"></i></div>
-                        <div class="dash-quick-label">Guides</div>
-                        <div class="dash-quick-count">50+ guides</div>
-                    </a>
-                    <a href="news.html" class="dash-quick-card">
-                        <div class="dash-quick-icon"><i data-lucide="radio"></i></div>
-                        <div class="dash-quick-label">News</div>
-                        <div class="dash-quick-count">Live security feed</div>
-                    </a>
-                    <a href="resources.html" class="dash-quick-card">
-                        <div class="dash-quick-icon"><i data-lucide="layers"></i></div>
-                        <div class="dash-quick-label">Resources</div>
-                        <div class="dash-quick-count">Platforms &amp; certs</div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── SECTION 4: AI ASSISTANT ─── -->
-        <section style="padding:0 0 70px;" id="ai-section">
-            <div class="container">
-                <div class="inner-section-header reveal" style="margin-bottom:28px;">
-                    <div><div class="section-number">04 / AI ASSISTANT</div></div>
-                    <div>
-                        <h2>Ask CyberM<br><span>anything.</span></h2>
-                        <p style="margin-top:10px;">Security concepts, CVE explanations, tool usage, CTF hints, and career advice — powered by CyberM AI.</p>
-                    </div>
-                </div>
-
-                <div class="dash-ai-card reveal">
-                    <!-- Left: context + prompt chips -->
-                    <div class="dash-ai-left">
-                        <div class="section-number" style="color:rgba(232,130,46,0.7);">INSTANT ANSWERS</div>
-                        <h2>Your security<br><span>copilot.</span></h2>
-                        <p>Get instant answers on any security topic — vulnerability explanations, tool commands, career guidance, and more.</p>
-                        <div class="ai-prompts">
-                            <button class="ai-prompt-chip" onclick="sendPrompt('What is SQL injection?')">What is SQL injection?</button>
-                            <button class="ai-prompt-chip" onclick="sendPrompt('Explain SIEM architecture')">Explain SIEM architecture</button>
-                            <button class="ai-prompt-chip" onclick="sendPrompt('How does Metasploit work?')">How does Metasploit work?</button>
-                            <button class="ai-prompt-chip" onclick="sendPrompt('What certifications should I get for SOC?')">What certs for a SOC role?</button>
-                            <button class="ai-prompt-chip" onclick="sendPrompt('nmap')">Key Nmap commands</button>
-                        </div>
-                    </div>
-
-                    <!-- Right: chat window -->
-                    <div class="dash-ai-right">
-                        <div class="ai-chat-window" id="ai-chat-window">
-                            <div class="ai-msg bot">
-                                <div class="ai-msg-avatar">AI</div>
-                                <div class="ai-msg-bubble">
-                                    Hi Navee 👋 I'm CyberM AI. I can help you understand vulnerabilities, security tools, CTF challenges, certification paths, and any security concept you're learning.<br><br>
-                                    What would you like to explore today?
+                                <div style="margin-top:12px;text-align:center;">
+                                    <a href="tools.html" class="view-all-link">
+                                        View all tools <i data-lucide="arrow-right"></i>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ai-chat-input">
-                            <input type="text" id="ai-input" placeholder="Ask about any security topic…"
-                                   onkeydown="if(event.key==='Enter') sendAI()">
-                            <button class="ai-chat-send" onclick="sendAI()" aria-label="Send message">
-                                <i data-lucide="send"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- ─── SECTION 5: RECENT ACTIVITY ─── -->
-        <section style="padding:0 0 100px;">
-            <div class="container">
-                <div class="inner-section-header reveal" style="margin-bottom:40px;">
-                    <div><div class="section-number">05 / RECENT ACTIVITY</div></div>
-                    <div>
-                        <h2>What you've<br><span>been doing.</span></h2>
-                    </div>
-                </div>
+                        </div><!-- /db-bottom-grid -->
 
-                <div class="feature-list">
-                    <div class="feature reveal">
-                        <div class="feature-number" style="color:var(--gray);font-size:10px;font-weight:600;">2H AGO</div>
-                        <h3>Completed: Log Sources &amp; Formats</h3>
-                        <p>Windows Event Log, Syslog, CEF/LEEF formats covered. Stage 3 topic 2 of 10 complete.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number" style="color:var(--gray);font-size:10px;font-weight:600;">5H AGO</div>
-                        <h3>Saved: Wireshark for Beginners Guide</h3>
-                        <p>Bookmarked for reference during Stage 3 threat detection practice.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number" style="color:var(--gray);font-size:10px;font-weight:600;">YESTERDAY</div>
-                        <h3>Used: Hash Calculator Utility</h3>
-                        <p>SHA-256 hashes generated for file integrity verification during a practice investigation.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number" style="color:var(--gray);font-size:10px;font-weight:600;">2 DAYS AGO</div>
-                        <h3>Completed: Stage 2 — Linux &amp; SIEM Basics</h3>
-                        <p>All 8 topics complete. Linux CLI, Splunk fundamentals, and ELK Stack basics covered.</p>
-                    </div>
-                </div>
+                    </div><!-- /db-main -->
 
-                <div style="text-align:right;margin-top:20px;" class="reveal">
-                    <a href="roadmaps.html" style="font-size:11px;font-weight:700;color:var(--orange);display:inline-flex;align-items:center;gap:5px;">
-                        View full roadmap progress <i data-lucide="arrow-right" style="width:12px;height:12px;"></i>
-                    </a>
-                </div>
+                </div><!-- /db-workspace -->
+
             </div>
         </section>
 
     </main>
 
-    <!-- ─── FOOTER ─── -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a href="dashboard.html" class="logo">
+                    <a href="index.html" class="logo">
                         <div class="logo-symbol">CM</div>
                         <span class="logo-text">CYBER<span>M</span></span>
                     </a>
-                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                    <p>The free, open cybersecurity workspace. Learn, research, and defend without barriers.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>PLATFORM</h4>
+                    <h4>Platform</h4>
                     <a href="roadmaps.html">Roadmaps</a>
-                    <a href="tools.html">Security Tools</a>
-                    <a href="utilities.html">Utilities</a>
+                    <a href="tools.html">Tools</a>
                     <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
                 </div>
                 <div class="footer-column">
-                    <h4>LEARN</h4>
-                    <a href="resources.html">Resources</a>
-                    <a href="news.html">Security News</a>
-                    <a href="guides.html">Tutorials</a>
-                </div>
-                <div class="footer-column">
-                    <h4>ACCOUNT</h4>
-                    <a href="about.html">About CYBERM</a>
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="index.html" onclick="signOut()">Sign Out</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 CYBERM</span>
-                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+                <span>Â© 2026 CYBERM. Built for the community.</span>
+                <span>Protect. Learn. Defend.</span>
             </div>
         </div>
     </footer>
-
-    <!-- Floating AI Button -->
-    <button class="ai-float" id="ai-float-global" onclick="scrollToAI()" title="CyberM AI Assistant" aria-label="Open CyberM AI">
-        <span class="ai-float-label">CyberM AI</span>
-        <i data-lucide="bot"></i>
-    </button>
 
     <script src="script.js"></script>
     <script src="dashboard.js"></script>
 
 </body>
-
 </html>
+
+

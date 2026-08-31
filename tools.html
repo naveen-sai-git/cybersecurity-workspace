@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CYBERM Security Tools — Curated directory of cybersecurity tools for reconnaissance, exploitation, network analysis, forensics, and OSINT.">
-    <title>CYBERM — Security Tools</title>
+    <meta name="description" content="CYBERM Security Tools — Curated directory of the best cybersecurity tools for reconnaissance, web security, network analysis, forensics, and OSINT.">
+    <title>CYBERM — Security Tools Directory</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
 
 <body>
 
+    <!-- HEADER -->
     <header id="header">
         <div class="container">
             <nav>
@@ -44,292 +45,391 @@
 
     <main>
 
-        <section class="page-hero">
+        <!-- ███ HERO ███ -->
+        <section class="inner-page-hero">
             <div class="container">
                 <div class="section-number">03 / SECURITY TOOLS</div>
                 <h1>Your tool belt<br><em>for the mission.</em></h1>
                 <p>A curated directory of the most essential cybersecurity tools, organized by discipline so you can find exactly what you need.</p>
-            </div>
-        </section>
-
-        <!-- Intro -->
-        <section class="intro-section">
-            <div class="container">
-                <div class="intro-grid">
-                    <div>
-                        <div class="section-number" style="color:rgba(232,130,46,0.85);">01 / DISCOVERY</div>
+                <div class="inner-page-hero-meta">
+                    <div class="meta-item">
+                        <strong>50+</strong>
+                        <span>TOOLS INDEXED</span>
                     </div>
-                    <div>
-                        <h2 class="intro-title reveal">Know the right tool <span>for every job.</span></h2>
-                        <p class="intro-copy reveal">
-                            Security work demands the right instrument for each task. Reconnaissance requires different tools than forensics. Exploitation requires different skills than defence.
-                            <br><br>
-                            CYBERM organises the essential toolkit by discipline so you spend less time searching and more time working.
-                        </p>
+                    <div class="meta-item">
+                        <strong>6</strong>
+                        <span>CATEGORIES</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>100%</strong>
+                        <span>OPEN SOURCE</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Category: Reconnaissance -->
-        <section class="inner-section" style="padding-bottom:0;">
+        <!-- ███ STICKY CATALOG TOOLBAR ███ -->
+        <div class="catalog-toolbar-wrap">
             <div class="container">
-                <div class="section-header reveal">
-                    <div><div class="section-number">02 / RECONNAISSANCE</div></div>
-                    <h2>Gather<br><span>intelligence.</span></h2>
-                </div>
-                <div class="card-grid reveal">
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="scan-search"></i></div>
-                        <h3>Nmap</h3>
-                        <p class="tool-card-meta">The gold standard for network discovery and security auditing. Scan ports, detect services, and identify OS fingerprints.</p>
-                        <a href="https://nmap.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                <div class="catalog-toolbar">
+                    <div class="catalog-search">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="tool-search" placeholder="Search tools..." oninput="filterTools()" autocomplete="off">
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="search"></i></div>
-                        <h3>Shodan</h3>
-                        <p class="tool-card-meta">Search engine for internet-connected devices. Discover exposed systems, open ports, and misconfigured services worldwide.</p>
-                        <a href="https://shodan.io" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                    <div class="filter-pills" id="filter-pills">
+                        <button class="filter-pill active" data-filter="all" onclick="setFilter('all', this)">All</button>
+                        <button class="filter-pill" data-filter="Recon" onclick="setFilter('Recon', this)"><i data-lucide="radar" style="width:11px;height:11px;"></i> Recon</button>
+                        <button class="filter-pill" data-filter="Web Security" onclick="setFilter('Web Security', this)"><i data-lucide="globe" style="width:11px;height:11px;"></i> Web Security</button>
+                        <button class="filter-pill" data-filter="Network" onclick="setFilter('Network', this)"><i data-lucide="network" style="width:11px;height:11px;"></i> Network</button>
+                        <button class="filter-pill" data-filter="Forensics" onclick="setFilter('Forensics', this)"><i data-lucide="microscope" style="width:11px;height:11px;"></i> Forensics</button>
+                        <button class="filter-pill" data-filter="OSINT" onclick="setFilter('OSINT', this)"><i data-lucide="eye" style="width:11px;height:11px;"></i> OSINT</button>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="user-search"></i></div>
-                        <h3>theHarvester</h3>
-                        <p class="tool-card-meta">OSINT tool for gathering emails, subdomains, IPs, URLs and names from public sources like Google, LinkedIn, and Shodan.</p>
-                        <a href="https://github.com/laramies/theHarvester" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="network"></i></div>
-                        <h3>Maltego</h3>
-                        <p class="tool-card-meta">Visual intelligence and link analysis platform. Map relationships between people, organizations, domains, and infrastructure.</p>
-                        <a href="https://maltego.com" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="globe"></i></div>
-                        <h3>Recon-ng</h3>
-                        <p class="tool-card-meta">Full-featured web reconnaissance framework written in Python. Modular design for systematic OSINT gathering.</p>
-                        <a href="https://github.com/lanmaster53/recon-ng" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="layers"></i></div>
-                        <h3>OSINT Framework</h3>
-                        <p class="tool-card-meta">Collection of 500+ OSINT resources organized by category. Your starting point for any open-source intelligence investigation.</p>
-                        <a href="https://osintframework.com" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
+                    <select class="sort-select" onchange="sortTools(this.value)" id="tools-sort">
+                        <option value="rating">Sort: Top Rated</option>
+                        <option value="alpha">Sort: A → Z</option>
+                        <option value="popular">Sort: Popular</option>
+                    </select>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Category: Web Security -->
-        <section class="inner-section" style="padding-bottom:0;">
+        <!-- ███ TOOLS GRID ███ -->
+        <section style="padding:50px 0 90px;background:var(--cream);">
             <div class="container">
-                <div class="section-header reveal">
-                    <div><div class="section-number">03 / WEB SECURITY</div></div>
-                    <h2>Test web<br><span>applications.</span></h2>
+                <div id="results-header" class="interior-section-header" style="margin-bottom:20px;">
+                    <h2>All <span>Security Tools</span></h2>
+                    <span style="font-size:11px;color:var(--gray);" id="tools-count">Showing 12 tools</span>
                 </div>
-                <div class="card-grid reveal">
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="crosshair"></i></div>
-                        <h3>Burp Suite</h3>
-                        <p class="tool-card-meta">The leading web application security testing platform. Intercept, modify, and replay HTTP requests with a full scanner and extension ecosystem.</p>
-                        <a href="https://portswigger.net/burp" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="shield-alert"></i></div>
-                        <h3>OWASP ZAP</h3>
-                        <p class="tool-card-meta">Free and open-source web application scanner. Excellent for beginners and CI/CD pipeline integration. Maintained by OWASP.</p>
-                        <a href="https://zaproxy.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="database"></i></div>
-                        <h3>SQLmap</h3>
-                        <p class="tool-card-meta">Automated SQL injection detection and exploitation tool. Supports database fingerprinting, data extraction, and shell access.</p>
-                        <a href="https://sqlmap.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="scan"></i></div>
-                        <h3>Nikto</h3>
-                        <p class="tool-card-meta">Open-source web server scanner that performs comprehensive tests against servers for dangerous files, outdated software, and misconfigurations.</p>
-                        <a href="https://cirt.net/Nikto2" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="folder-search"></i></div>
-                        <h3>Dirb / Gobuster</h3>
-                        <p class="tool-card-meta">Web content discovery tools. Brute-force directories and file names on web servers to uncover hidden resources and entry points.</p>
-                        <a href="https://github.com/OJ/gobuster" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="code-xml"></i></div>
-                        <h3>Wfuzz</h3>
-                        <p class="tool-card-meta">Flexible web application fuzzer. Used for brute-forcing GET and POST parameters, headers, cookies, and form fields.</p>
-                        <a href="https://github.com/xmendez/wfuzz" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Category: Network Analysis -->
-        <section class="inner-section" style="padding-bottom:0;">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div><div class="section-number">04 / NETWORK ANALYSIS</div></div>
-                    <h2>Analyse<br><span>the wire.</span></h2>
-                </div>
-                <div class="card-grid reveal">
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="activity"></i></div>
-                        <h3>Wireshark</h3>
-                        <p class="tool-card-meta">The world's most widely used network protocol analyser. Capture and inspect packets in real time or from saved captures.</p>
-                        <a href="https://wireshark.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="shield-check"></i></div>
-                        <h3>Nessus</h3>
-                        <p class="tool-card-meta">Comprehensive vulnerability scanning platform. Identifies over 67,000 CVEs across network devices, cloud, containers, and endpoints.</p>
-                        <a href="https://tenable.com/products/nessus" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="radar"></i></div>
-                        <h3>OpenVAS</h3>
-                        <p class="tool-card-meta">Open-source vulnerability assessment system. Full-featured network scanner maintained by Greenbone for enterprise and personal use.</p>
-                        <a href="https://openvas.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="terminal"></i></div>
-                        <h3>Metasploit</h3>
-                        <p class="tool-card-meta">The world's most used penetration testing framework. Thousands of exploits, auxiliary modules, and payloads for security testing.</p>
-                        <a href="https://metasploit.com" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="plug"></i></div>
-                        <h3>Netcat</h3>
-                        <p class="tool-card-meta">The "Swiss army knife" of networking. Read and write data across network connections. Essential for debugging, port scanning, and backdoors.</p>
-                        <a href="https://nmap.org/ncat/" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="radio"></i></div>
-                        <h3>Aircrack-ng</h3>
-                        <p class="tool-card-meta">Complete suite for assessing WiFi network security. Packet capture, replay attacks, and WEP/WPA cracking in a single toolkit.</p>
-                        <a href="https://aircrack-ng.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="media-grid" id="tools-grid">
 
-        <!-- Category: Forensics -->
-        <section class="inner-section" style="padding-bottom:0;">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div><div class="section-number">05 / FORENSICS</div></div>
-                    <h2>Investigate<br><span>the evidence.</span></h2>
-                </div>
-                <div class="card-grid reveal">
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="microscope"></i></div>
-                        <h3>Autopsy</h3>
-                        <p class="tool-card-meta">Digital forensics platform and GUI for The Sleuth Kit. Analyse hard drives, smartphones, and disk images with timeline analysis.</p>
-                        <a href="https://sleuthkit.org/autopsy/" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                    <!-- Nmap -->
+                    <div class="media-card reveal" data-category="Recon" data-name="nmap" data-rating="4.9">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0d1117 0%,#0a1628 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🔭</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:900;color:#58a6ff;letter-spacing:-1px;">Nmap</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Recon · Network Scanner</div>
+                            <div class="media-card-title">Nmap — Network Mapper</div>
+                            <div class="media-card-desc">The industry-standard open-source tool for network discovery and security auditing. Scans hosts, open ports, services, and OS detection.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Port Scanning</span>
+                                <span class="skill-pill">OS Detection</span>
+                                <span class="skill-pill">NSE Scripts</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                            <span class="media-card-platform">Linux / Windows</span>
+                            <a href="https://nmap.org" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="cpu"></i></div>
-                        <h3>Volatility</h3>
-                        <p class="tool-card-meta">Advanced memory forensics framework. Extract artifacts from RAM dumps — processes, network connections, registry keys, and malware traces.</p>
-                        <a href="https://volatilityfoundation.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="binary"></i></div>
-                        <h3>Binwalk</h3>
-                        <p class="tool-card-meta">Firmware analysis tool for extracting and reverse-engineering embedded firmware images. Used in IoT and hardware security research.</p>
-                        <a href="https://github.com/ReFirmLabs/binwalk" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="hard-drive"></i></div>
-                        <h3>FTK Imager</h3>
-                        <p class="tool-card-meta">Industry-standard disk imaging tool from AccessData. Create forensically sound images and preview evidence without altering original data.</p>
-                        <a href="https://www.exterro.com/forensic-toolkit" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="code-2"></i></div>
-                        <h3>Ghidra</h3>
-                        <p class="tool-card-meta">NSA's open-source reverse engineering framework. Disassemble and decompile binaries across multiple architectures for malware analysis.</p>
-                        <a href="https://ghidra-sre.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="image"></i></div>
-                        <h3>ExifTool</h3>
-                        <p class="tool-card-meta">Read, write, and edit metadata in files. Reveal GPS coordinates, camera data, software used, and modification timestamps in images and documents.</p>
-                        <a href="https://exiftool.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Category: Password & Crypto -->
-        <section class="inner-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div><div class="section-number">06 / PASSWORD &amp; CRYPTO</div></div>
-                    <h2>Break and<br><span>understand hashes.</span></h2>
-                </div>
-                <div class="card-grid reveal">
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="zap"></i></div>
-                        <h3>Hashcat</h3>
-                        <p class="tool-card-meta">The world's fastest and most advanced CPU-based password recovery utility. Supports GPU acceleration and 300+ hash types.</p>
-                        <a href="https://hashcat.net" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                    <!-- Wireshark -->
+                    <div class="media-card reveal" data-category="Network" data-name="wireshark" data-rating="4.9">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0a1a0a 0%,#102810 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🦈</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:900;color:#4ade80;letter-spacing:-1px;">Wireshark</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Network · Packet Analyzer</div>
+                            <div class="media-card-title">Wireshark — Packet Analyzer</div>
+                            <div class="media-card-desc">The world's foremost network protocol analyzer. Capture and interactively browse the traffic running on a computer network in real time.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Packet Capture</span>
+                                <span class="skill-pill">Protocol Analysis</span>
+                                <span class="skill-pill">Filtering</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                            <span class="media-card-platform">Cross Platform</span>
+                            <a href="https://wireshark.org" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
                     </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="lock-keyhole"></i></div>
-                        <h3>John the Ripper</h3>
-                        <p class="tool-card-meta">Classic open-source password security auditing and recovery tool. Supports over 15 hash formats with dictionary, brute-force, and hybrid attacks.</p>
-                        <a href="https://www.openwall.com/john/" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="wrench"></i></div>
-                        <h3>CyberChef</h3>
-                        <p class="tool-card-meta">The "Cyber Swiss Army Knife." Browser-based tool for encoding, decoding, encrypting, hashing and data analysis with drag-and-drop operations.</p>
-                        <a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="repeat"></i></div>
-                        <h3>Hydra</h3>
-                        <p class="tool-card-meta">Fast and flexible online password cracking tool. Supports 50+ protocols including SSH, FTP, HTTP, SMB, SMTP and more.</p>
-                        <a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="key"></i></div>
-                        <h3>GnuPG</h3>
-                        <p class="tool-card-meta">Complete implementation of the OpenPGP standard. Encrypt and sign data, manage keys, and authenticate communications securely.</p>
-                        <a href="https://gnupg.org" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="tool-card">
-                        <div class="tool-icon"><i data-lucide="hash"></i></div>
-                        <h3>hashID</h3>
-                        <p class="tool-card-meta">Tool to identify different types of hashes. Input an unknown hash and get a list of possible hash algorithms that could have produced it.</p>
-                        <a href="https://github.com/psypanda/hashID" target="_blank" rel="noopener" class="tool-card-link">Open Tool <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CTA -->
-        <section class="cta-section" style="padding-top:0;">
-            <div class="container">
-                <div class="cta-box reveal">
-                    <div class="cta-content">
-                        <div class="eyebrow">MISSING A TOOL?</div>
-                        <h2>The community<br><span>builds this together.</span></h2>
-                        <p>Think an important tool is missing from the directory? Let us know and we'll review it for inclusion.</p>
-                        <a href="contact.html" class="btn-primary">
-                            Suggest a Tool
-                            <i data-lucide="arrow-right"></i>
-                        </a>
+                    <!-- Burp Suite -->
+                    <div class="media-card reveal" data-category="Web Security" data-name="burp suite" data-rating="5.0">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#1a0800 0%,#2d1200 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🕷️</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:900;color:#f97316;letter-spacing:-0.5px;">Burp Suite</span>
+                            </div>
+                            <span class="media-card-badge badge-orange">Bestseller</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Web Security · Web Proxy</div>
+                            <div class="media-card-title">Burp Suite — Web Security Testing</div>
+                            <div class="media-card-desc">The leading platform for web application security testing. Intercept, modify, and replay HTTP requests to identify vulnerabilities.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">HTTP Proxy</span>
+                                <span class="skill-pill">Scanner</span>
+                                <span class="skill-pill">Intruder</span>
+                                <span class="skill-pill">Repeater</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 5.0</div>
+                            <span class="media-card-platform">Java / Cross Platform</span>
+                            <a href="https://portswigger.net/burp" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
                     </div>
+
+                    <!-- Metasploit -->
+                    <div class="media-card reveal" data-category="Recon" data-name="metasploit" data-rating="4.9">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#150010 0%,#200015 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">💥</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:17px;font-weight:900;color:#c084fc;letter-spacing:-0.5px;">Metasploit</span>
+                            </div>
+                            <span class="media-card-badge badge-purple">Standard</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Recon · Exploitation Framework</div>
+                            <div class="media-card-title">Metasploit Framework</div>
+                            <div class="media-card-desc">The most widely used penetration testing framework in the world. Develop, test, and execute exploit code against remote targets.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Exploits</span>
+                                <span class="skill-pill">Payloads</span>
+                                <span class="skill-pill">MSFvenom</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                            <span class="media-card-platform">Kali Linux</span>
+                            <a href="https://metasploit.com" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Shodan -->
+                    <div class="media-card reveal" data-category="OSINT" data-name="shodan" data-rating="4.8">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#001520 0%,#002535 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🛰️</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:900;color:#38bdf8;letter-spacing:-1px;">Shodan</span>
+                            </div>
+                            <span class="media-card-badge badge-blue">Standard</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">OSINT · IoT Search Engine</div>
+                            <div class="media-card-title">Shodan — Internet of Things Search</div>
+                            <div class="media-card-desc">The search engine for internet-connected devices. Discover exposed servers, routers, cameras, and vulnerable systems across the globe.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">IoT</span>
+                                <span class="skill-pill">Banner Grab</span>
+                                <span class="skill-pill">CVE Search</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                            <span class="media-card-platform">Web / API</span>
+                            <a href="https://shodan.io" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Maltego -->
+                    <div class="media-card reveal" data-category="OSINT" data-name="maltego" data-rating="4.7">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🕸️</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:900;color:#a78bfa;letter-spacing:-0.5px;">Maltego</span>
+                            </div>
+                            <span class="media-card-badge badge-purple">Standard</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">OSINT · Graph Intelligence</div>
+                            <div class="media-card-title">Maltego — Visual Link Analysis</div>
+                            <div class="media-card-desc">An open-source intelligence and graphical link analysis tool for gathering and visualizing intelligence from various OSINT sources.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Graph Analysis</span>
+                                <span class="skill-pill">Transforms</span>
+                                <span class="skill-pill">OSINT</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.7</div>
+                            <span class="media-card-platform">Cross Platform</span>
+                            <a href="https://maltego.com" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- OWASP ZAP -->
+                    <div class="media-card reveal" data-category="Web Security" data-name="owasp zap" data-rating="4.8">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#001a10 0%,#002d1c 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">⚡</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:900;color:#34d399;letter-spacing:-1px;">OWASP ZAP</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Web Security · Active Scanner</div>
+                            <div class="media-card-title">OWASP ZAP — Zed Attack Proxy</div>
+                            <div class="media-card-desc">Free and open-source web application security scanner. Find security vulnerabilities in web applications during development and testing.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Active Scan</span>
+                                <span class="skill-pill">Spider</span>
+                                <span class="skill-pill">Fuzzer</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                            <span class="media-card-platform">Java / Cross Platform</span>
+                            <a href="https://zaproxy.org" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Aircrack-ng -->
+                    <div class="media-card reveal" data-category="Network" data-name="aircrack-ng" data-rating="4.7">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0a0015 0%,#15002d 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">📡</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:900;color:#e879f9;letter-spacing:-0.5px;">Aircrack-ng</span>
+                            </div>
+                            <span class="media-card-badge badge-purple">Standard</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Network · WiFi Security</div>
+                            <div class="media-card-title">Aircrack-ng — WiFi Security Suite</div>
+                            <div class="media-card-desc">Complete suite of tools to assess WiFi network security. Covers monitoring, attacking, testing, and cracking WEP/WPA/WPA2 passwords.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">WiFi Audit</span>
+                                <span class="skill-pill">WPA2</span>
+                                <span class="skill-pill">Handshake</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.7</div>
+                            <span class="media-card-platform">Linux</span>
+                            <a href="https://aircrack-ng.org" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Autopsy -->
+                    <div class="media-card reveal" data-category="Forensics" data-name="autopsy" data-rating="4.7">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0f0a00 0%,#1a1200 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🔬</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:900;color:#fbbf24;letter-spacing:-0.5px;">Autopsy</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Forensics · Disk Analyzer</div>
+                            <div class="media-card-title">Autopsy — Digital Forensics Platform</div>
+                            <div class="media-card-desc">GUI-based open-source digital forensics platform. Analyze hard drives and smartphones, recover deleted files, and build forensics reports.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Disk Analysis</span>
+                                <span class="skill-pill">File Recovery</span>
+                                <span class="skill-pill">Timeline</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.7</div>
+                            <span class="media-card-platform">Windows / Linux</span>
+                            <a href="https://sleuthkit.org/autopsy" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- theHarvester -->
+                    <div class="media-card reveal" data-category="OSINT" data-name="theharvester" data-rating="4.6">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#001510 0%,#002218 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🌾</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:15px;font-weight:900;color:#86efac;letter-spacing:-0.5px;">theHarvester</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">OSINT · Email & Domain Recon</div>
+                            <div class="media-card-title">theHarvester — Email & Domain OSINT</div>
+                            <div class="media-card-desc">Gather emails, names, subdomains, IPs, and URLs from public sources. Essential for the initial phases of a penetration test.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Email Harvest</span>
+                                <span class="skill-pill">Subdomains</span>
+                                <span class="skill-pill">DNS</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.6</div>
+                            <span class="media-card-platform">Python / Linux</span>
+                            <a href="https://github.com/laramies/theHarvester" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Hashcat -->
+                    <div class="media-card reveal" data-category="Forensics" data-name="hashcat" data-rating="4.8">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#100005 0%,#1f0010 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🔑</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:900;color:#f9a8d4;letter-spacing:-0.5px;">Hashcat</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Forensics · Password Recovery</div>
+                            <div class="media-card-title">Hashcat — Advanced Password Recovery</div>
+                            <div class="media-card-desc">The world's fastest and most advanced password recovery utility. Supports GPU acceleration and hundreds of hash algorithms.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">GPU Cracking</span>
+                                <span class="skill-pill">Dictionary</span>
+                                <span class="skill-pill">Rule-based</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                            <span class="media-card-platform">Cross Platform</span>
+                            <a href="https://hashcat.net" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Nikto -->
+                    <div class="media-card reveal" data-category="Web Security" data-name="nikto" data-rating="4.6">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#001020 0%,#001832 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:4px;">
+                                <span style="font-size:42px;">🏴‍☠️</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:900;color:#60a5fa;letter-spacing:-1px;">Nikto</span>
+                            </div>
+                            <span class="media-card-badge badge-green">Open Source</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Web Security · Vulnerability Scanner</div>
+                            <div class="media-card-title">Nikto — Web Server Scanner</div>
+                            <div class="media-card-desc">Open-source web server scanner that tests for dangerous files, outdated server software, version-specific problems, and misconfigurations.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Web Scan</span>
+                                <span class="skill-pill">Misconfig</span>
+                                <span class="skill-pill">CVE Check</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.6</div>
+                            <span class="media-card-platform">Perl / Linux</span>
+                            <a href="https://cirt.net/Nikto2" target="_blank" rel="noopener" class="media-card-cta">Open Tool <i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                </div><!-- /tools-grid -->
+
+                <div id="no-results" style="display:none;text-align:center;padding:80px 0;color:var(--gray);">
+                    <i data-lucide="search-x" style="width:48px;height:48px;margin-bottom:16px;display:block;margin-left:auto;margin-right:auto;"></i>
+                    <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:700;color:var(--black);margin-bottom:8px;">No tools found</div>
+                    <div style="font-size:13px;">Try a different search or filter.</div>
                 </div>
+
             </div>
         </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-top">
@@ -338,39 +438,75 @@
                         <div class="logo-symbol">CM</div>
                         <span class="logo-text">CYBER<span>M</span></span>
                     </a>
-                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                    <p>The free, open cybersecurity workspace. Learn, research, and defend without barriers.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>PLATFORM</h4>
+                    <h4>Platform</h4>
                     <a href="roadmaps.html">Roadmaps</a>
-                    <a href="tools.html">Security Tools</a>
-                    <a href="utilities.html">Utilities</a>
+                    <a href="tools.html">Tools</a>
                     <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
                 </div>
                 <div class="footer-column">
-                    <h4>LEARN</h4>
-                    <a href="resources.html">Resources</a>
-                    <a href="news.html">Security News</a>
-                    <a href="guides.html">Tutorials</a>
-                    <a href="dashboard.html">Dashboard</a>
-                </div>
-                <div class="footer-column">
-                    <h4>COMPANY</h4>
+                    <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 CYBERM</span>
-                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+                <span>© 2026 CYBERM. Built for the community.</span>
+                <span>Protect. Learn. Defend.</span>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        let activeFilter = 'all';
+
+        function setFilter(filter, btn) {
+            activeFilter = filter;
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            filterTools();
+        }
+
+        function filterTools() {
+            const query = document.getElementById('tool-search').value.toLowerCase();
+            const cards = document.querySelectorAll('#tools-grid .media-card');
+            let visible = 0;
+            cards.forEach(card => {
+                const cat = card.dataset.category;
+                const name = card.dataset.name;
+                const matchFilter = activeFilter === 'all' || cat === activeFilter;
+                const matchSearch = !query || name.includes(query) || cat.toLowerCase().includes(query);
+                if (matchFilter && matchSearch) {
+                    card.style.display = '';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('tools-count').textContent = 'Showing ' + visible + ' tools';
+            document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        function sortTools(val) {
+            const grid = document.getElementById('tools-grid');
+            const cards = Array.from(grid.querySelectorAll('.media-card'));
+            cards.sort((a, b) => {
+                if (val === 'rating') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+                if (val === 'alpha') return a.dataset.name.localeCompare(b.dataset.name);
+                return 0;
+            });
+            cards.forEach(c => grid.appendChild(c));
+        }
+    </script>
 
 </body>
-
 </html>

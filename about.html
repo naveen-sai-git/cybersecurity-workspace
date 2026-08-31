@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About CYBERM — Our mission to build the definitive workspace for the global cybersecurity community.">
-    <title>CYBERM — About</title>
+    <meta name="description" content="About CYBERM — Our mission, platform timeline, and core values. The free, open cybersecurity platform built for practitioners, students, and researchers.">
+    <title>CYBERM — About the Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
 
 <body>
 
+    <!-- HEADER -->
     <header id="header">
         <div class="container">
             <nav>
@@ -44,219 +45,225 @@
 
     <main>
 
-        <section class="page-hero">
+        <!-- ███ EDITORIAL HERO ███ -->
+        <section class="about-quote-hero">
             <div class="container">
-                <div class="section-number">09 / ABOUT</div>
-                <h1>Built for the people who<br><em>defend the internet.</em></h1>
-                <p>CYBERM started as a question: why is cybersecurity learning still so scattered? We decided to do something about it.</p>
+                <div class="reveal">
+                    <div class="section-number" style="justify-content:center;color:var(--orange);margin-bottom:20px;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:1.2px;">
+                        <span style="width:7px;height:7px;background:var(--orange);border-radius:50%;display:inline-block;"></span>
+                        06 / OUR MISSION
+                    </div>
+                    <div class="about-quote">
+                        Security knowledge<br>
+                        should be <span>free.</span><br>
+                        Always.
+                    </div>
+                    <p class="about-mission-text">
+                        CYBERM is a free, open cybersecurity workspace. We believe world-class security education should be accessible to every practitioner, student, and researcher — regardless of budget, institution, or geography.
+                    </p>
+                    <div style="display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap;">
+                        <a href="dashboard.html" class="btn-primary" style="font-size:12px;">
+                            <i data-lucide="layout-dashboard"></i> Enter Workspace
+                        </a>
+                        <a href="roadmaps.html" class="btn-secondary" style="font-size:12px;background:transparent;border-color:rgba(255,255,255,0.2);color:white;">
+                            <i data-lucide="map"></i> View Roadmaps
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Mission Statement -->
-        <section class="intro-section">
+        <!-- ███ PLATFORM TIMELINE ███ -->
+        <section style="padding:70px 0;background:var(--cream);">
             <div class="container">
-                <div class="intro-grid">
+                <div class="interior-section-header reveal">
                     <div>
-                        <div class="section-number" style="color:rgba(232,130,46,0.85);">01 / THE MISSION</div>
+                        <div class="section-number">01 / EVOLUTION</div>
+                        <h2 style="margin-top:8px;">Platform <span>Timeline</span></h2>
                     </div>
+                    <p style="max-width:320px;font-size:12px;color:var(--gray);line-height:1.7;">From a simple guide collection to a full-stack security workspace trusted by thousands.</p>
+                </div>
+
+                <div class="platform-timeline reveal">
+                    <div class="timeline-step done">
+                        <div class="timeline-dot">✓</div>
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-event">Platform Launch & First 10 Guides</div>
+                    </div>
+                    <div class="timeline-step done">
+                        <div class="timeline-dot">✓</div>
+                        <div class="timeline-year">Early 2024</div>
+                        <div class="timeline-event">50+ Guides & Roadmap System</div>
+                    </div>
+                    <div class="timeline-step done">
+                        <div class="timeline-dot">✓</div>
+                        <div class="timeline-year">Late 2024</div>
+                        <div class="timeline-event">Security Tools Directory</div>
+                    </div>
+                    <div class="timeline-step done">
+                        <div class="timeline-dot">✓</div>
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-event">AI Assistant Integration</div>
+                    </div>
+                    <div class="timeline-step active">
+                        <div class="timeline-dot" style="font-size:9px;font-weight:900;">NOW</div>
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-event">10k+ Users & Full Workspace</div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot">→</div>
+                        <div class="timeline-year">2026+</div>
+                        <div class="timeline-event">Live Labs & CTF Platform</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ███ STATS COUNTER ROW ███ -->
+        <section style="padding:0 0 70px;background:var(--cream);">
+            <div class="container">
+                <div class="stats-counter-row reveal">
+                    <div class="stats-counter-item">
+                        <div class="stats-counter-value">10k<span>+</span></div>
+                        <div class="stats-counter-label">Active Users</div>
+                    </div>
+                    <div class="stats-counter-item">
+                        <div class="stats-counter-value">50<span>+</span></div>
+                        <div class="stats-counter-label">Security Tools</div>
+                    </div>
+                    <div class="stats-counter-item">
+                        <div class="stats-counter-value">120<span>+</span></div>
+                        <div class="stats-counter-label">Learning Guides</div>
+                    </div>
+                    <div class="stats-counter-item">
+                        <div class="stats-counter-value">100<span>%</span></div>
+                        <div class="stats-counter-label">Free Forever</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ███ PILLARS & VALUES ███ -->
+        <section style="padding:0 0 80px;background:var(--cream);">
+            <div class="container">
+
+                <div class="interior-section-header reveal">
                     <div>
-                        <h2 class="intro-title reveal">
-                            One place.<br>
-                            <span>Every security workflow.</span>
-                        </h2>
-                        <p class="intro-copy reveal">
-                            Cybersecurity practitioners spend enormous amounts of time doing context-switching — from documentation, to tools, to labs, to threat feeds, to communities.
-                            <br><br>
-                            CYBERM is our answer to that fragmentation. A single workspace where learning, research, tools, and intelligence exist side-by-side — designed for focus, built for real work.
-                        </p>
+                        <div class="section-number">02 / VALUES</div>
+                        <h2 style="margin-top:8px;">Our core <span>pillars.</span></h2>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platform Pillars -->
-        <section class="features-section" style="padding-top:0;">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div><div class="section-number">02 / PLATFORM</div></div>
-                    <h2>What CYBERM<br><span>provides.</span></h2>
-                </div>
-                <div class="feature-list">
-                    <div class="feature reveal">
-                        <div class="feature-number">01</div>
-                        <h3>Structured Career Roadmaps</h3>
-                        <p>Step-by-step learning paths from beginner to advanced across Ethical Hacking, SOC Analysis, and Web Application Security — with visual milestone tracking.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number">02</div>
-                        <h3>Security Tools Directory</h3>
-                        <p>A curated, categorized library of the most essential cybersecurity tools — from reconnaissance to forensics — with descriptions and direct links.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number">03</div>
-                        <h3>Interactive Developer Utilities</h3>
-                        <p>Browser-based security utilities — hash calculators, encoders, JWT decoders, subnet calculators — that run locally with no data leaving your machine.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number">04</div>
-                        <h3>Curated Learning Guides</h3>
-                        <p>Practical, structured guides written for practitioners. Not textbooks. Actionable content covering web security, forensics, OSINT, cryptography, and more.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number">05</div>
-                        <h3>Security News Intelligence</h3>
-                        <p>Filtered security news — CVEs, threat campaigns, patch advisories — curated for people who need to act on the information, not just read about it.</p>
-                    </div>
-                    <div class="feature reveal">
-                        <div class="feature-number">06</div>
-                        <h3>AI Security Assistant</h3>
-                        <p>An AI assistant built around security context. Ask about vulnerabilities, understand exploitation techniques, explore concepts, and accelerate research.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats -->
-        <section style="padding: 80px 0; background: var(--cream-light); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-            <div class="container">
-                <div class="hero-meta reveal" style="justify-content: space-around; border-top: none; padding-top: 0; margin-top: 0;">
-                    <div class="meta-item">
-                        <strong>4+</strong>
-                        <span>CAREER ROADMAPS</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>50+</strong>
-                        <span>CURATED GUIDES</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>20+</strong>
-                        <span>SECURITY UTILITIES</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>24/7</strong>
-                        <span>AI ASSISTANT</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>100+</strong>
-                        <span>TOOL REFERENCES</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Platform Timeline — horizontal milestones -->
-        <section class="timeline-section">
-            <div class="container">
-                <div class="inner-section-header reveal">
-                    <div><div class="section-number">03 / MILESTONES</div></div>
-                    <div>
-                        <h2>How we got<br><span>here.</span></h2>
-                        <p>From an idea to a full cybersecurity workspace — the CYBERM story so far.</p>
-                    </div>
+                    <p style="max-width:320px;font-size:12px;color:var(--gray);line-height:1.7;">The principles that guide every decision we make about the platform.</p>
                 </div>
 
-                <div class="timeline-track reveal">
-                    <div class="timeline-item done">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-item-year">Q1 2025</div>
-                        <div class="timeline-item-title">Platform Launched</div>
-                        <div class="timeline-item-desc">Initial release with the core workspace, roadmap framework, and tools directory.</div>
-                    </div>
-                    <div class="timeline-item done">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-item-year">Q2 2025</div>
-                        <div class="timeline-item-title">First 1,000 Users</div>
-                        <div class="timeline-item-desc">Community grew organically through word-of-mouth in security forums and Discord servers.</div>
-                    </div>
-                    <div class="timeline-item done">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-item-year">Q3 2025</div>
-                        <div class="timeline-item-title">Guides Library Launched</div>
-                        <div class="timeline-item-desc">50+ practitioner-written guides covering web security, forensics, OSINT, and more.</div>
-                    </div>
-                    <div class="timeline-item done">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-item-year">Q4 2025</div>
-                        <div class="timeline-item-title">Developer Utilities Added</div>
-                        <div class="timeline-item-desc">Interactive browser-based tools for encoding, hashing, and network analysis.</div>
-                    </div>
-                    <div class="timeline-item current">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-item-year">2026</div>
-                        <div class="timeline-item-title">AI Integration &amp; v2</div>
-                        <div class="timeline-item-desc">CyberM AI assistant, expanded roadmaps, and the full CYBERM workspace experience.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-item-year">NEXT</div>
-                        <div class="timeline-item-title">Community Platform</div>
-                        <div class="timeline-item-desc">User profiles, public writeups, community challenges, and peer learning features.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="values-grid">
 
-        <!-- Values Grid -->
-        <section class="roles-section" style="padding-top:0;">
-            <div class="container">
-                <div class="roles-header reveal">
-                    <div>
-                        <div class="section-number">04 / VALUES</div>
-                        <h2>What we<br><span>stand for.</span></h2>
-                    </div>
-                    <p>These principles guide every decision we make about the platform.</p>
-                </div>
-                <div class="roles-grid">
-                    <div class="role reveal">
-                        <div class="role-icon"><i data-lucide="unlock"></i></div>
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i data-lucide="unlock"></i></div>
                         <h3>Open Access</h3>
-                        <p>Core features are and always will be free. Security education shouldn't be locked behind expensive paywalls.</p>
+                        <p class="value-card-desc">Every resource on CYBERM is free, forever. No paywalls, no premium tiers, no course fees. Security education is a public good and we treat it that way.</p>
                     </div>
-                    <div class="role reveal">
-                        <div class="role-icon"><i data-lucide="shield"></i></div>
-                        <h3>Security First</h3>
-                        <p>We dogfood our own values. Privacy-respecting, minimal data collection, transparent about what we store.</p>
+
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i data-lucide="flask-conical"></i></div>
+                        <h3>Practical Labs</h3>
+                        <p class="value-card-desc">Theoretical knowledge without hands-on experience is worthless in security. Everything we build prioritizes doing over reading — real tools, real scenarios.</p>
                     </div>
-                    <div class="role reveal">
-                        <div class="role-icon"><i data-lucide="users"></i></div>
-                        <h3>Community Driven</h3>
-                        <p>The best content comes from practitioners. We prioritize community contributions and real-world experience.</p>
+
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i data-lucide="users"></i></div>
+                        <h3>Community First</h3>
+                        <p class="value-card-desc">Built by practitioners, for practitioners. Our content is shaped by real-world security professionals who know exactly what you need to be effective.</p>
                     </div>
-                    <div class="role reveal">
-                        <div class="role-icon"><i data-lucide="wrench"></i></div>
-                        <h3>Practical Over Theory</h3>
-                        <p>Hands-on beats textbooks every time. Everything on this platform is designed for people who learn by doing.</p>
-                    </div>
-                    <div class="role reveal">
-                        <div class="role-icon"><i data-lucide="refresh-cw"></i></div>
+
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i data-lucide="radar"></i></div>
                         <h3>Always Current</h3>
-                        <p>The threat landscape evolves daily. We're committed to keeping roadmaps, tools, and news up-to-date.</p>
+                        <p class="value-card-desc">The threat landscape changes daily. Our guides, tools directory, and news feed are continuously updated so you're never working from stale information.</p>
                     </div>
-                    <div class="role reveal">
-                        <div class="role-icon"><i data-lucide="heart"></i></div>
-                        <h3>Free Forever</h3>
-                        <p>The foundational toolkit — roadmaps, guides, utilities, news — will never be monetized or put behind a paywall.</p>
+
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Ethical Practice</h3>
+                        <p class="value-card-desc">We teach offensive techniques strictly within ethical and legal frameworks. All content is oriented toward defense, understanding, and responsible disclosure.</p>
+                    </div>
+
+                    <div class="value-card reveal">
+                        <div class="value-icon"><i data-lucide="trending-up"></i></div>
+                        <h3>Structured Progress</h3>
+                        <p class="value-card-desc">No random content dumps. Every roadmap, guide, and tool is mapped to a progression framework so you always know where you are and where you're going next.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ███ WHAT CYBERM IS (Editorial 2-col) ███ -->
+        <section style="padding:80px 0;background:var(--black);color:white;">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:80px;align-items:center;" class="reveal">
+                    <div>
+                        <div class="section-number" style="color:var(--orange);margin-bottom:16px;">03 / PLATFORM</div>
+                        <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.05;color:white;">
+                            What CYBERM<br>actually <span style="color:var(--orange);">is.</span>
+                        </h2>
+                    </div>
+                    <div>
+                        <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,0.55);max-width:580px;margin-bottom:24px;">
+                            CYBERM is not a course platform. It's not a certification prep site. It's a workspace — a single environment where you can learn, research, build skills, and stay informed as a security professional.
+                        </p>
+                        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.38);max-width:580px;margin-bottom:30px;">
+                            Think of it as your personal security operations center for learning. The dashboard tracks your progress. The roadmaps give you direction. The tools directory gives you access. The guides teach you technique. The news feed keeps you alert.
+                        </p>
+                        <div style="display:flex;flex-direction:column;gap:14px;">
+                            <div style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:3px;">
+                                <div style="width:38px;height:38px;background:rgba(232,130,46,0.15);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">
+                                    <i data-lucide="map" style="width:18px;height:18px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:12px;font-weight:700;color:white;margin-bottom:3px;">3 Structured Career Roadmaps</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">Ethical Hacking · SOC Analyst · Web App Security</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:3px;">
+                                <div style="width:38px;height:38px;background:rgba(232,130,46,0.15);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">
+                                    <i data-lucide="bot" style="width:18px;height:18px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:12px;font-weight:700;color:white;margin-bottom:3px;">CyberM AI Assistant</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">Instant answers to security questions, tool recommendations, CTF hints</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:3px;">
+                                <div style="width:38px;height:38px;background:rgba(232,130,46,0.15);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0;">
+                                    <i data-lucide="newspaper" style="width:18px;height:18px;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:12px;font-weight:700;color:white;margin-bottom:3px;">Daily Threat Intelligence Feed</div>
+                                    <div style="font-size:11px;color:rgba(255,255,255,0.4);">CVEs, zero-days, and threat actor campaigns curated daily</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="cta-section" style="padding-top:0;">
+        <!-- ███ CTA ███ -->
+        <section style="padding:80px 0;background:var(--cream);">
             <div class="container">
                 <div class="cta-box reveal">
                     <div class="cta-content">
-                        <div class="eyebrow">JOIN THE COMMUNITY</div>
-                        <h2>Be part of<br><span>the mission.</span></h2>
-                        <p>Join thousands of security professionals, students, and researchers who've made CYBERM their home base.</p>
-                        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                        <div class="eyebrow">Get started for free</div>
+                        <h2>Ready to level<br>up your <span>security?</span></h2>
+                        <p>Join 10,000+ practitioners using CYBERM to sharpen their skills, stay ahead of threats, and advance their careers.</p>
+                        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
                             <a href="dashboard.html" class="btn-primary">
-                                Enter the Workspace
-                                <i data-lucide="arrow-right"></i>
+                                <i data-lucide="arrow-up-right"></i> Enter Workspace
                             </a>
-                            <a href="contact.html" class="btn-secondary" style="border-color:rgba(255,255,255,0.2);color:white;">
-                                Get in Touch
-                                <i data-lucide="arrow-up-right"></i>
+                            <a href="roadmaps.html" class="btn-light">
+                                <i data-lucide="map"></i> Browse Roadmaps
                             </a>
                         </div>
                     </div>
@@ -266,6 +273,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-top">
@@ -274,33 +282,29 @@
                         <div class="logo-symbol">CM</div>
                         <span class="logo-text">CYBER<span>M</span></span>
                     </a>
-                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                    <p>The free, open cybersecurity workspace. Learn, research, and defend without barriers.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>PLATFORM</h4>
+                    <h4>Platform</h4>
                     <a href="roadmaps.html">Roadmaps</a>
-                    <a href="tools.html">Security Tools</a>
-                    <a href="utilities.html">Utilities</a>
+                    <a href="tools.html">Tools</a>
                     <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
                 </div>
                 <div class="footer-column">
-                    <h4>LEARN</h4>
-                    <a href="resources.html">Resources</a>
-                    <a href="news.html">Security News</a>
-                    <a href="guides.html">Tutorials</a>
-                    <a href="dashboard.html">Dashboard</a>
-                </div>
-                <div class="footer-column">
-                    <h4>COMPANY</h4>
+                    <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 CYBERM</span>
-                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+                <span>© 2026 CYBERM. Built for the community.</span>
+                <span>Protect. Learn. Defend.</span>
             </div>
         </div>
     </footer>
@@ -308,5 +312,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>

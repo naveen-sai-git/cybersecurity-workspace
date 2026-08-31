@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CYBERM Guides — Curated cybersecurity guides, tutorials, and walkthroughs for every skill level.">
-    <title>CYBERM — Guides</title>
+    <meta name="description" content="CYBERM Guides — Curated cybersecurity tutorials covering web security, malware analysis, cryptography, and cloud defense for all skill levels.">
+    <title>CYBERM — Learning Guides & Tutorials</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
 
 <body>
 
+    <!-- HEADER -->
     <header id="header">
         <div class="container">
             <nav>
@@ -44,206 +45,346 @@
 
     <main>
 
-        <section class="page-hero">
+        <!-- ███ HERO ███ -->
+        <section class="inner-page-hero">
             <div class="container">
-                <div class="section-number">06 / LEARNING GUIDES</div>
+                <div class="section-number">04 / LEARNING GUIDES</div>
                 <h1>Guides that cut<br><em>through the noise.</em></h1>
-                <p>Practical, structured guides written for people who learn by doing — not by reading textbooks.</p>
-            </div>
-        </section>
-
-        <!-- Featured Guide -->
-        <section style="padding: 70px 0 2px; background: var(--cream);">
-            <div class="container">
-                <div class="featured-card reveal">
-                    <div class="featured-card-inner">
-                        <span class="tag tag-orange">FEATURED GUIDE</span>
-                        <h2>Getting Started with<br>Ethical Hacking</h2>
-                        <p>A complete beginner's walkthrough — from setting up your first Kali Linux VM, through your first network scan, to completing your first intentionally vulnerable machine. No prior security experience required.</p>
-                        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-                            <a href="#" class="btn-light">
-                                Read Guide <i data-lucide="arrow-right"></i>
-                            </a>
-                            <div style="display:flex;gap:8px;">
-                                <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.15);">Beginner</span>
-                                <span class="tag" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.15);">~45 min read</span>
-                            </div>
-                        </div>
+                <p>Practical, structured tutorials written for people who learn by doing — not by reading textbooks. Every guide is production-ready.</p>
+                <div class="inner-page-hero-meta">
+                    <div class="meta-item">
+                        <strong>120+</strong>
+                        <span>TOTAL GUIDES</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>4</strong>
+                        <span>CATEGORIES</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Weekly</strong>
+                        <span>NEW CONTENT</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Filter Row -->
-        <section style="padding: 40px 0 20px; background: var(--cream);">
+        <!-- ███ STICKY TOOLBAR ███ -->
+        <div class="catalog-toolbar-wrap">
             <div class="container">
-                <div class="filter-row">
-                    <span class="tag tag-black">All Guides</span>
-                    <span class="tag tag-muted">Web Security</span>
-                    <span class="tag tag-muted">Network Security</span>
-                    <span class="tag tag-muted">Malware &amp; Forensics</span>
-                    <span class="tag tag-muted">Cryptography</span>
-                    <span class="tag tag-muted">OSINT</span>
-                    <span class="tag tag-muted">CTF Walkthroughs</span>
+                <div class="catalog-toolbar">
+                    <div class="catalog-search">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="guide-search" placeholder="Search guides..." oninput="filterGuides()" autocomplete="off">
+                    </div>
+                    <div class="filter-pills">
+                        <button class="filter-pill active" data-filter="all" onclick="setGuideFilter('all', this)">All</button>
+                        <button class="filter-pill" data-filter="Web Security" onclick="setGuideFilter('Web Security', this)"><i data-lucide="globe" style="width:11px;height:11px;"></i> Web Security</button>
+                        <button class="filter-pill" data-filter="Malware Analysis" onclick="setGuideFilter('Malware Analysis', this)"><i data-lucide="bug" style="width:11px;height:11px;"></i> Malware Analysis</button>
+                        <button class="filter-pill" data-filter="Cryptography" onclick="setGuideFilter('Cryptography', this)"><i data-lucide="key" style="width:11px;height:11px;"></i> Cryptography</button>
+                        <button class="filter-pill" data-filter="Cloud Defense" onclick="setGuideFilter('Cloud Defense', this)"><i data-lucide="cloud" style="width:11px;height:11px;"></i> Cloud Defense</button>
+                    </div>
+                    <select class="sort-select" onchange="sortGuides(this.value)">
+                        <option value="rating">Top Rated</option>
+                        <option value="newest">Newest First</option>
+                        <option value="readtime">Shortest Read</option>
+                    </select>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Guides Grid -->
-        <section style="padding: 20px 0 130px; background: var(--cream);">
+        <!-- ███ CONTENT ███ -->
+        <section style="padding:50px 0 90px;background:var(--cream);">
             <div class="container">
-                <div class="card-grid reveal" style="border-top:1px solid var(--line);">
 
-                    <div class="guide-card">
-                        <span class="tag tag-orange">WEB SECURITY</span>
-                        <h3>OWASP Top 10 Explained</h3>
-                        <p>A deep dive into all ten vulnerability categories with real-world examples, code snippets, and defensive recommendations for developers and pentesters.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Intermediate</span>
+                <!-- Featured Guide Banner -->
+                <div class="featured-banner reveal" id="featured-guide">
+                    <div class="featured-banner-body">
+                        <div class="featured-banner-tag">
+                            <i data-lucide="star" style="width:12px;height:12px;"></i>
+                            Featured Guide
                         </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">NETWORK SECURITY</span>
-                        <h3>Wireshark for Beginners</h3>
-                        <p>Capture your first packets, filter traffic, follow streams, and identify suspicious behaviour in network captures. Step-by-step with screenshots.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Beginner</span>
+                        <h2>The Complete SQL Injection Attack & Defense Guide</h2>
+                        <p>From basics to advanced blind SQLi. Covers UNION attacks, error-based extraction, time-based blind techniques, and real-world mitigation strategies with prepared statements and ORMs.</p>
+                        <div class="featured-banner-meta">
+                            <span><strong>Advanced</strong></span>
+                            <span>·</span>
+                            <span><strong>22 min</strong> read</span>
+                            <span>·</span>
+                            <span><strong>★ 4.9</strong> (1.2k ratings)</span>
                         </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">WEB SECURITY</span>
-                        <h3>SQL Injection Deep Dive</h3>
-                        <p>From basic UNION attacks to blind time-based injection — understand every technique and learn to write WAF bypass payloads from scratch.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">LAB SETUP</span>
-                        <h3>Build Your Home Security Lab</h3>
-                        <p>Set up a complete local lab with Kali Linux, Metasploitable, and vulnerable web apps. Everything you need to practice safely without a cloud bill.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Beginner</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">CTF</span>
-                        <h3>CTF Beginner's Handbook</h3>
-                        <p>How to approach Capture The Flag competitions — web challenges, binary exploitation, reverse engineering, and cryptography. Your first flag awaits.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Beginner</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">CRYPTOGRAPHY</span>
-                        <h3>Hashing Algorithms Explained</h3>
-                        <p>MD5, SHA-1, SHA-256, bcrypt — what makes a hash function secure, how collisions happen, and why your password storage choice matters enormously.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">OSINT</span>
-                        <h3>OSINT Techniques for Investigators</h3>
-                        <p>Systematic open-source intelligence gathering — email pivoting, reverse image search, Shodan queries, metadata extraction, and digital footprint analysis.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">MALWARE</span>
-                        <h3>Malware Analysis — First Steps</h3>
-                        <p>Set up a safe sandbox, perform static and dynamic analysis, identify IOCs, and write a structured threat report. Hands-on with real malware samples.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Advanced</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">NETWORK SECURITY</span>
-                        <h3>Nmap Mastery Guide</h3>
-                        <p>Every Nmap scan type explained with timing, evasion, script scanning, and output formatting. Go from basic port scan to professional network audit.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">WEB SECURITY</span>
-                        <h3>Burp Suite — Complete Guide</h3>
-                        <p>Master the Proxy, Repeater, Intruder, and Scanner. Learn to intercept requests, fuzz parameters, and find authentication vulnerabilities efficiently.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">CRYPTOGRAPHY</span>
-                        <h3>Understanding TLS/SSL</h3>
-                        <p>How HTTPS works under the hood — handshakes, certificates, cipher suites, common misconfigurations, and tools for testing TLS security.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Intermediate</span>
-                        </div>
-                    </div>
-
-                    <div class="guide-card">
-                        <span class="tag tag-orange">FORENSICS</span>
-                        <h3>Memory Forensics with Volatility</h3>
-                        <p>Analyse RAM dumps to uncover running processes, network connections, injected code, and malware artefacts that disappear when a system reboots.</p>
-                        <div class="guide-card-footer">
-                            <a href="#" class="tool-card-link">Read guide <i data-lucide="arrow-right"></i></a>
-                            <span class="tag tag-muted">Advanced</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div style="text-align:center;margin-top:50px;" class="reveal">
-                    <a href="resources.html" class="btn-secondary">
-                        Browse All Resources
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="cta-section" style="padding-top:0;">
-            <div class="container">
-                <div class="cta-box reveal">
-                    <div class="cta-content">
-                        <div class="eyebrow">SAVE YOUR PROGRESS</div>
-                        <h2>Track what you've<br><span>already learned.</span></h2>
-                        <p>Create a workspace to bookmark guides, track your progress, and pick up exactly where you left off.</p>
-                        <a href="dashboard.html" class="btn-primary">
-                            Create Free Workspace
-                            <i data-lucide="arrow-right"></i>
+                        <a href="#" class="media-card-cta" style="width:fit-content;padding:10px 18px;font-size:11px;">
+                            Read Guide <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
+                    <div class="featured-banner-img">
+                        <div class="featured-banner-img-placeholder" style="background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);color:#58a6ff;font-family:monospace;font-size:14px;padding:30px;display:flex;flex-direction:column;justify-content:center;gap:8px;line-height:1.8;">
+                            <span style="color:#ff7b72;">SELECT</span> * <span style="color:#ff7b72;">FROM</span> users<br>
+                            <span style="color:#ff7b72;">WHERE</span> id = <span style="color:#a5d6ff;">'1' OR '1'='1'</span><br>
+                            <span style="color:#7ee787;">-- ⚠ Injection detected</span><br>
+                            <span style="color:#ff7b72;">UNION</span> <span style="color:#ff7b72;">SELECT</span> username,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;password <span style="color:#ff7b72;">FROM</span> admin--<br>
+                            <span style="color:#e6db74;">→ 847 rows returned</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Section Header -->
+                <div class="interior-section-header">
+                    <h2>All <span>Guides</span></h2>
+                    <span style="font-size:11px;color:var(--gray);" id="guides-count">Showing 9 guides</span>
+                </div>
+
+                <!-- Guides Grid -->
+                <div class="media-grid" id="guides-grid">
+
+                    <!-- Guide 1 -->
+                    <div class="media-card reveal" data-category="Web Security" data-name="xss cross-site scripting" data-rating="4.9" data-readtime="15">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#1a0800 0%,#2d1200 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">⚡</span>
+                                <span style="font-family:monospace;font-size:13px;color:#f97316;">&lt;script&gt;alert(1)&lt;/script&gt;</span>
+                            </div>
+                            <span class="media-card-badge badge-red">Advanced</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Web Security</div>
+                            <div class="media-card-title">XSS: From Reflected to DOM-Based Attack Chains</div>
+                            <div class="media-card-desc">Every XSS variant explained with real payloads, bypass techniques, and React/Angular-specific sinks you'll miss in code review.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">XSS</span>
+                                <span class="skill-pill">DOM</span>
+                                <span class="skill-pill">CSP Bypass</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                            <span class="media-card-platform">15 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 2 -->
+                    <div class="media-card reveal" data-category="Malware Analysis" data-name="ransomware reverse engineering" data-rating="4.8" data-readtime="25">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0d0515 0%,#1a0a28 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">🦠</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:16px;font-weight:800;color:#a855f7;">Malware RE</span>
+                            </div>
+                            <span class="media-card-badge badge-purple">Advanced</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Malware Analysis</div>
+                            <div class="media-card-title">Reverse Engineering Ransomware with IDA Pro</div>
+                            <div class="media-card-desc">Static and dynamic analysis of a real ransomware sample. Unpack, deobfuscate, and map the encryption routine step by step.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">IDA Pro</span>
+                                <span class="skill-pill">x86 ASM</span>
+                                <span class="skill-pill">Unpacking</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                            <span class="media-card-platform">25 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 3 -->
+                    <div class="media-card reveal" data-category="Cryptography" data-name="tls ssl encryption" data-rating="4.7" data-readtime="18">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#001520 0%,#002535 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">🔐</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:800;color:#38bdf8;">TLS 1.3</span>
+                            </div>
+                            <span class="media-card-badge badge-blue">Intermediate</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Cryptography</div>
+                            <div class="media-card-title">How TLS 1.3 Works: The Handshake Explained</div>
+                            <div class="media-card-desc">Deep dive into TLS 1.3 protocol — certificates, key exchange, cipher suites, 0-RTT, and how to intercept it in Wireshark.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">TLS 1.3</span>
+                                <span class="skill-pill">PKI</span>
+                                <span class="skill-pill">Wireshark</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.7</div>
+                            <span class="media-card-platform">18 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 4 -->
+                    <div class="media-card reveal" data-category="Cloud Defense" data-name="aws iam misconfigurations" data-rating="4.9" data-readtime="20">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#150800 0%,#261000 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">☁️</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:18px;font-weight:800;color:#fb923c;">AWS IAM</span>
+                            </div>
+                            <span class="media-card-badge badge-orange">Intermediate</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Cloud Defense</div>
+                            <div class="media-card-title">AWS IAM Misconfigurations That Get Companies Breached</div>
+                            <div class="media-card-desc">The 7 most common IAM mistakes — overpermissive roles, exposed keys, confused deputy attacks — and exactly how to fix them.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">AWS IAM</span>
+                                <span class="skill-pill">Policies</span>
+                                <span class="skill-pill">CloudTrail</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                            <span class="media-card-platform">20 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 5 -->
+                    <div class="media-card reveal" data-category="Web Security" data-name="ssrf server side request forgery" data-rating="4.8" data-readtime="12">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0a1a0a 0%,#102010 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">🌐</span>
+                                <span style="font-family:monospace;font-size:13px;color:#4ade80;">SSRF → 169.254.169.254</span>
+                            </div>
+                            <span class="media-card-badge badge-blue">Intermediate</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Web Security</div>
+                            <div class="media-card-title">SSRF: Pivoting to Internal Cloud Metadata APIs</div>
+                            <div class="media-card-desc">Server-side request forgery from a simple URL parameter to full AWS credential theft via IMDS. Real payloads and defense.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">SSRF</span>
+                                <span class="skill-pill">IMDS</span>
+                                <span class="skill-pill">Cloud</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                            <span class="media-card-platform">12 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 6 -->
+                    <div class="media-card reveal" data-category="Malware Analysis" data-name="phishing email forensics" data-rating="4.6" data-readtime="10">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#0f0a00 0%,#1f1500 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">🎣</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:16px;font-weight:800;color:#fbbf24;">Phishing Analysis</span>
+                            </div>
+                            <span class="media-card-badge" style="background:#16a34a;color:white;">Beginner</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Malware Analysis</div>
+                            <div class="media-card-title">Dissecting a Phishing Email: Headers to Payload</div>
+                            <div class="media-card-desc">Step-by-step walkthrough of analyzing a real phishing campaign — email headers, spoofed domains, malicious attachments, and IOCs.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Email Headers</span>
+                                <span class="skill-pill">IOCs</span>
+                                <span class="skill-pill">Sandboxing</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.6</div>
+                            <span class="media-card-platform">10 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 7 -->
+                    <div class="media-card reveal" data-category="Cryptography" data-name="password hashing bcrypt argon2" data-rating="4.8" data-readtime="8">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#100010 0%,#200020 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">🔑</span>
+                                <span style="font-family:monospace;font-size:11px;color:#e879f9;">$2b$12$aBcDeFgHiJkLmN...</span>
+                            </div>
+                            <span class="media-card-badge" style="background:#16a34a;color:white;">Beginner</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Cryptography</div>
+                            <div class="media-card-title">Password Hashing: bcrypt vs Argon2 vs scrypt</div>
+                            <div class="media-card-desc">Why MD5 and SHA-256 are not password hashes. Adaptive algorithms, work factors, and how to choose the right one for your app.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">bcrypt</span>
+                                <span class="skill-pill">Argon2</span>
+                                <span class="skill-pill">Salting</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                            <span class="media-card-platform">8 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 8 -->
+                    <div class="media-card reveal" data-category="Cloud Defense" data-name="kubernetes security hardening" data-rating="4.7" data-readtime="22">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#001628 0%,#002040 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">⚙️</span>
+                                <span style="font-family:'Manrope',sans-serif;font-size:17px;font-weight:800;color:#60a5fa;">K8s Security</span>
+                            </div>
+                            <span class="media-card-badge badge-red">Advanced</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Cloud Defense</div>
+                            <div class="media-card-title">Kubernetes Security Hardening Checklist</div>
+                            <div class="media-card-desc">RBAC lockdown, network policies, pod security standards, image scanning, secrets management, and detecting cryptominer attacks in K8s.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Kubernetes</span>
+                                <span class="skill-pill">RBAC</span>
+                                <span class="skill-pill">OPA</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.7</div>
+                            <span class="media-card-platform">22 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 9 -->
+                    <div class="media-card reveal" data-category="Web Security" data-name="jwt json web token attacks" data-rating="4.9" data-readtime="14">
+                        <div class="media-card-img" style="background:linear-gradient(135deg,#150a00 0%,#261500 100%);">
+                            <div class="media-card-img-placeholder" style="flex-direction:column;gap:6px;">
+                                <span style="font-size:42px;">🪪</span>
+                                <span style="font-family:monospace;font-size:11px;color:#f97316;">eyJhbGciOiJub25lIn0...</span>
+                            </div>
+                            <span class="media-card-badge badge-orange">Intermediate</span>
+                        </div>
+                        <div class="media-card-body">
+                            <div class="media-card-category">Web Security</div>
+                            <div class="media-card-title">JWT Attacks: From None Algorithm to Key Confusion</div>
+                            <div class="media-card-desc">Every JWT vulnerability — alg:none bypass, weak secrets, RS256 to HS256 confusion, JWT header injection, and kid SQL injection.</div>
+                            <div class="skill-pills">
+                                <span class="skill-pill">JWT</span>
+                                <span class="skill-pill">Auth Bypass</span>
+                                <span class="skill-pill">Burp Suite</span>
+                            </div>
+                        </div>
+                        <div class="media-card-meta">
+                            <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                            <span class="media-card-platform">14 min read</span>
+                            <a href="#" class="media-card-cta">Read <i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div><!-- /guides-grid -->
+
+                <div id="guides-no-results" style="display:none;text-align:center;padding:80px 0;color:var(--gray);">
+                    <i data-lucide="search-x" style="width:48px;height:48px;margin-bottom:16px;display:block;margin-left:auto;margin-right:auto;"></i>
+                    <div style="font-family:'Manrope',sans-serif;font-size:20px;font-weight:700;color:var(--black);margin-bottom:8px;">No guides found</div>
+                    <div style="font-size:13px;">Try a different search or category.</div>
+                </div>
+
             </div>
         </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-top">
@@ -252,39 +393,75 @@
                         <div class="logo-symbol">CM</div>
                         <span class="logo-text">CYBER<span>M</span></span>
                     </a>
-                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                    <p>The free, open cybersecurity workspace. Learn, research, and defend without barriers.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>PLATFORM</h4>
+                    <h4>Platform</h4>
                     <a href="roadmaps.html">Roadmaps</a>
-                    <a href="tools.html">Security Tools</a>
-                    <a href="utilities.html">Utilities</a>
+                    <a href="tools.html">Tools</a>
                     <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
                 </div>
                 <div class="footer-column">
-                    <h4>LEARN</h4>
-                    <a href="resources.html">Resources</a>
-                    <a href="news.html">Security News</a>
-                    <a href="guides.html">Tutorials</a>
-                    <a href="dashboard.html">Dashboard</a>
-                </div>
-                <div class="footer-column">
-                    <h4>COMPANY</h4>
+                    <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 CYBERM</span>
-                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+                <span>© 2026 CYBERM. Built for the community.</span>
+                <span>Protect. Learn. Defend.</span>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        let activeGuideFilter = 'all';
+
+        function setGuideFilter(filter, btn) {
+            activeGuideFilter = filter;
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            filterGuides();
+        }
+
+        function filterGuides() {
+            const query = document.getElementById('guide-search').value.toLowerCase();
+            const cards = document.querySelectorAll('#guides-grid .media-card');
+            let visible = 0;
+            cards.forEach(card => {
+                const cat = card.dataset.category;
+                const name = card.dataset.name;
+                const matchFilter = activeGuideFilter === 'all' || cat === activeGuideFilter;
+                const matchSearch = !query || name.includes(query) || cat.toLowerCase().includes(query);
+                if (matchFilter && matchSearch) {
+                    card.style.display = '';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.getElementById('guides-count').textContent = 'Showing ' + visible + ' guides';
+            document.getElementById('guides-no-results').style.display = visible === 0 ? 'block' : 'none';
+        }
+
+        function sortGuides(val) {
+            const grid = document.getElementById('guides-grid');
+            const cards = Array.from(grid.querySelectorAll('.media-card'));
+            cards.sort((a, b) => {
+                if (val === 'rating') return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
+                if (val === 'readtime') return parseInt(a.dataset.readtime) - parseInt(b.dataset.readtime);
+                return 0;
+            });
+            cards.forEach(c => grid.appendChild(c));
+        }
+    </script>
 
 </body>
-
 </html>

@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CYBERM Roadmaps — Interactive cybersecurity career paths for Ethical Hacking, SOC Analysis, and Web Application Security.">
+    <meta name="description" content="CYBERM Roadmaps — Interactive cybersecurity career paths for Ethical Hacking, SOC Analysis, and Web Application Security with milestone tracking.">
     <title>CYBERM — Career Roadmaps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .path-panel { display: none; }
+        .path-panel.active { display: block; }
+    </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header id="header">
         <div class="container">
             <nav>
@@ -44,387 +49,485 @@
 
     <main>
 
-        <!-- Page Hero -->
-        <section class="page-hero">
+        <!-- ███ HERO + PATH TABS ███ -->
+        <section class="inner-page-hero">
             <div class="container">
                 <div class="section-number">02 / CAREER PATHS</div>
                 <h1>Interactive skill<br><em>roadmaps.</em></h1>
-                <p>Step-by-step milestones curated by industry practitioners. Follow clear stages from foundations to mastery.</p>
-            </div>
-        </section>
+                <p>Step-by-step milestones curated by industry practitioners. Track your progress from foundations to mastery.</p>
 
-        <!-- Roadmap 1: Ethical Hacking -->
-        <section class="inner-section">
-            <div class="container">
-
-                <div class="inner-section-header reveal">
-                    <div>
-                        <div class="section-number">01 / ETHICAL HACKING</div>
-                    </div>
-                    <div>
-                        <h2>Ethical Hacking &amp; <span>Penetration Testing</span></h2>
-                        <p style="margin-top: 16px;">Master offensive security, network scanning, exploitation techniques, web vulnerability analysis, and privilege escalation. Beginner to Advanced · 6 Months.</p>
-                    </div>
+                <!-- Path Selector Tabs -->
+                <div class="path-tabs">
+                    <button class="path-tab active" onclick="switchPath('hacking', this)" id="tab-hacking">
+                        <i data-lucide="terminal"></i> Ethical Hacking
+                    </button>
+                    <button class="path-tab" onclick="switchPath('soc', this)" id="tab-soc">
+                        <i data-lucide="shield-alert"></i> SOC Analyst
+                    </button>
+                    <button class="path-tab" onclick="switchPath('webapp', this)" id="tab-webapp">
+                        <i data-lucide="globe"></i> Web App Security
+                    </button>
                 </div>
 
-                <!-- Milestone Timeline -->
-                <div class="milestone-track reveal">
-                    <div class="milestone-step completed">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 1<br>Networking<br>Fundamentals</span>
+                <!-- Inner stats -->
+                <div class="inner-page-hero-meta">
+                    <div class="meta-item">
+                        <strong>3</strong>
+                        <span>CAREER PATHS</span>
                     </div>
-                    <div class="milestone-connector completed"></div>
-                    <div class="milestone-step completed">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 2<br>Recon &amp;<br>Scanning</span>
+                    <div class="meta-item">
+                        <strong>18</strong>
+                        <span>TOTAL STAGES</span>
                     </div>
-                    <div class="milestone-connector completed"></div>
-                    <div class="milestone-step active">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 3<br>Exploitation</span>
+                    <div class="meta-item">
+                        <strong>6–12 Mo</strong>
+                        <span>AVG. COMPLETION</span>
                     </div>
-                    <div class="milestone-connector"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 4<br>Web App<br>Security</span>
+                    <div class="meta-item">
+                        <strong>Industry</strong>
+                        <span>VALIDATED</span>
                     </div>
-                    <div class="milestone-connector"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 5<br>Post-Exploitation</span>
-                    </div>
-                </div>
-
-                <!-- Stage Cards -->
-                <div class="roadmap-list">
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 01</div>
-                        <div class="stage-content">
-                            <h3>Networking &amp; Linux Fundamentals</h3>
-                            <span class="stage-status completed">
-                                <i data-lucide="circle-check" style="width:12px;height:12px;"></i>
-                                Completed
-                            </span>
-                            <p style="color:var(--gray);font-size:13px;line-height:1.65;max-width:650px;">
-                                Build your core technical foundation. Understand how networks operate, how packets travel, and how to navigate Linux — the operating system of security.
-                            </p>
-                            <div class="stage-skills">
-                                <span class="tag tag-orange">TCP/IP Protocol Suite</span>
-                                <span class="tag tag-orange">Linux Command Line</span>
-                                <span class="tag tag-orange">Subnetting &amp; Routing</span>
-                                <span class="tag tag-orange">Bash Scripting</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 02</div>
-                        <div class="stage-content">
-                            <h3>Reconnaissance &amp; Scanning</h3>
-                            <span class="stage-status completed">
-                                <i data-lucide="circle-check" style="width:12px;height:12px;"></i>
-                                Completed
-                            </span>
-                            <p style="color:var(--gray);font-size:13px;line-height:1.65;max-width:650px;">
-                                Learn how attackers gather intelligence. Map networks, enumerate services, and understand what information is publicly available about any target.
-                            </p>
-                            <div class="stage-skills">
-                                <span class="tag tag-orange">Nmap Network Auditing</span>
-                                <span class="tag tag-orange">Shodan OSINT</span>
-                                <span class="tag tag-orange">DNS Enumeration</span>
-                                <span class="tag tag-orange">Wireshark Traffic Analysis</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 03</div>
-                        <div class="stage-content">
-                            <h3>Vulnerability Assessment &amp; Exploitation</h3>
-                            <span class="stage-status active">
-                                <i data-lucide="loader" style="width:12px;height:12px;"></i>
-                                Next Milestone
-                            </span>
-                            <p style="color:var(--gray);font-size:13px;line-height:1.65;max-width:650px;">
-                                Identify, analyze, and exploit vulnerabilities in controlled environments. Understand exploitation frameworks, common weaknesses, and responsible disclosure.
-                            </p>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">Metasploit Framework</span>
-                                <span class="tag tag-muted">Buffer Overflow Basics</span>
-                                <span class="tag tag-muted">Password Cracking (Hashcat/John)</span>
-                                <span class="tag tag-muted">Payload Crafting</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 04</div>
-                        <div class="stage-content">
-                            <h3>Web Application Security</h3>
-                            <span class="stage-status upcoming">
-                                <i data-lucide="circle" style="width:12px;height:12px;"></i>
-                                Upcoming
-                            </span>
-                            <p style="color:var(--gray);font-size:13px;line-height:1.65;max-width:650px;">
-                                Explore the most common attack surface on the internet. Learn to find and exploit web vulnerabilities using industry-standard methodologies and tools.
-                            </p>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">OWASP Top 10</span>
-                                <span class="tag tag-muted">SQL Injection &amp; XSS</span>
-                                <span class="tag tag-muted">CSRF &amp; Auth Bypasses</span>
-                                <span class="tag tag-muted">Burp Suite Pro</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 05</div>
-                        <div class="stage-content">
-                            <h3>Post-Exploitation &amp; Privilege Escalation</h3>
-                            <span class="stage-status upcoming">
-                                <i data-lucide="circle" style="width:12px;height:12px;"></i>
-                                Upcoming
-                            </span>
-                            <p style="color:var(--gray);font-size:13px;line-height:1.65;max-width:650px;">
-                                Learn what happens after initial access. Escalate privileges, move laterally through networks, maintain persistence, and document findings in professional reports.
-                            </p>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">Linux PrivEsc Techniques</span>
-                                <span class="tag tag-muted">Windows Active Directory</span>
-                                <span class="tag tag-muted">Lateral Movement</span>
-                                <span class="tag tag-muted">Report Writing</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="display:flex;justify-content:flex-end;margin-top:30px;" class="reveal">
-                    <a href="dashboard.html" class="btn-primary">
-                        Track in Dashboard
-                        <i data-lucide="arrow-right"></i>
-                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Roadmap 2: SOC Analyst -->
-        <section class="intro-section">
+        <!-- ███ PATH PANELS ███ -->
+        <section style="padding:60px 0 90px;background:var(--cream);">
             <div class="container">
-                <div class="inner-section-header reveal">
-                    <div>
-                        <div class="section-number" style="color:rgba(232,130,46,0.85);">02 / SOC ANALYST</div>
-                    </div>
-                    <div>
-                        <h2 class="intro-title">SOC Analyst &amp; <span>Blue Team Defense</span></h2>
-                        <p class="intro-copy" style="font-size:15px;">
-                            Build the skills to detect, analyze, and respond to cyber threats. Work with SIEMs, threat intelligence, and incident response workflows. Beginner to Intermediate · 4 Months.
-                        </p>
-                    </div>
-                </div>
 
-                <!-- Milestone Timeline -->
-                <div class="milestone-track reveal" style="margin-bottom:50px;">
-                    <div class="milestone-step completed" style="--node-bg: white;">
-                        <div class="milestone-node" style="background:var(--orange);border-color:var(--orange);"></div>
-                        <span class="milestone-step-label" style="color:var(--orange-light);">Stage 1<br>Networking</span>
-                    </div>
-                    <div class="milestone-connector completed"></div>
-                    <div class="milestone-step completed">
-                        <div class="milestone-node" style="background:var(--orange);border-color:var(--orange);"></div>
-                        <span class="milestone-step-label" style="color:var(--orange-light);">Stage 2<br>Linux &amp; SIEM</span>
-                    </div>
-                    <div class="milestone-connector completed"></div>
-                    <div class="milestone-step active">
-                        <div class="milestone-node" style="background:var(--black-soft);border-color:var(--orange);border-width:3px;box-shadow:0 0 0 5px rgba(232,130,46,0.2);"></div>
-                        <span class="milestone-step-label" style="color:white;font-weight:700;">Stage 3<br>Threat Detection</span>
-                    </div>
-                    <div class="milestone-connector" style="background:rgba(255,255,255,0.15);"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node" style="background:var(--dark-gray);border-color:rgba(255,255,255,0.2);"></div>
-                        <span class="milestone-step-label">Stage 4<br>Incident Response</span>
-                    </div>
-                    <div class="milestone-connector" style="background:rgba(255,255,255,0.15);"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node" style="background:var(--dark-gray);border-color:rgba(255,255,255,0.2);"></div>
-                        <span class="milestone-step-label">Stage 5<br>Threat Hunting</span>
-                    </div>
-                </div>
+                <!-- ═══ PANEL: ETHICAL HACKING ═══ -->
+                <div class="path-panel active" id="panel-hacking">
 
-                <div class="feature-list" style="border-top-color:rgba(255,255,255,0.1);">
-                    <div class="feature reveal" style="border-bottom-color:rgba(255,255,255,0.1);">
-                        <div class="feature-number">01</div>
-                        <h3 style="font-family:'Manrope',sans-serif;font-size:22px;letter-spacing:-0.8px;color:white;">Networking &amp; Security Foundations</h3>
-                        <p style="color:#9C9A95;">OSI model, TCP/IP, firewall concepts, IDS/IPS fundamentals, and security architecture basics. Build the vocabulary of defensive security.</p>
-                    </div>
-                    <div class="feature reveal" style="border-bottom-color:rgba(255,255,255,0.1);">
-                        <div class="feature-number">02</div>
-                        <h3 style="font-family:'Manrope',sans-serif;font-size:22px;letter-spacing:-0.8px;color:white;">Linux Administration &amp; SIEM Basics</h3>
-                        <p style="color:#9C9A95;">Navigate Linux environments, manage logs, and get hands-on with Splunk and ELK Stack. Understand how SIEMs aggregate and correlate events.</p>
-                    </div>
-                    <div class="feature reveal" style="border-bottom-color:rgba(255,255,255,0.1);">
-                        <div class="feature-number">03</div>
-                        <h3 style="font-family:'Manrope',sans-serif;font-size:22px;letter-spacing:-0.8px;color:white;">Threat Detection &amp; Log Analysis</h3>
-                        <p style="color:#9C9A95;">Write detection rules, analyze security logs, understand attack patterns, and distinguish between false positives and genuine threats in real alerts.</p>
-                    </div>
-                    <div class="feature reveal" style="border-bottom-color:rgba(255,255,255,0.1);">
-                        <div class="feature-number">04</div>
-                        <h3 style="font-family:'Manrope',sans-serif;font-size:22px;letter-spacing:-0.8px;color:white;">Incident Response &amp; Playbooks</h3>
-                        <p style="color:#9C9A95;">Develop and execute IR playbooks, perform forensic triage, coordinate containment, and lead post-incident analysis and reporting.</p>
-                    </div>
-                    <div class="feature reveal" style="border-bottom-color:rgba(255,255,255,0.1);">
-                        <div class="feature-number">05</div>
-                        <h3 style="font-family:'Manrope',sans-serif;font-size:22px;letter-spacing:-0.8px;color:white;">Threat Hunting &amp; Intelligence</h3>
-                        <p style="color:#9C9A95;">Go beyond reactive monitoring. Use threat intelligence feeds, hunt for adversary TTPs using the MITRE ATT&amp;CK framework, and proactively find threats.</p>
-                    </div>
-                </div>
+                    <!-- Milestone Track -->
+                    <div class="reveal">
+                        <div class="interior-section-header">
+                            <div>
+                                <div class="section-number">01 / ETHICAL HACKING</div>
+                                <h2 style="margin-top:8px;">Ethical Hacking &amp; <span>Penetration Testing</span></h2>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:11px;color:var(--gray);">Duration: 6 Months &nbsp;·&nbsp; 5 Stages</div>
+                                <div style="margin-top:6px;">
+                                    <span class="status-badge in-progress">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <div style="display:flex;justify-content:flex-end;margin-top:30px;" class="reveal">
-                    <a href="dashboard.html" class="btn-light">
-                        Track in Dashboard
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Roadmap 3: Web App Security -->
-        <section class="inner-section">
-            <div class="container">
-                <div class="inner-section-header reveal">
-                    <div>
-                        <div class="section-number">03 / WEB APP SECURITY</div>
-                    </div>
-                    <div>
-                        <h2>Web Application <span>Security Specialist</span></h2>
-                        <p style="margin-top:16px;">Master the full spectrum of web security — from identifying vulnerabilities in code to exploiting complex web application flaws. Intermediate · 5 Months.</p>
-                    </div>
-                </div>
-
-                <!-- Milestone Timeline -->
-                <div class="milestone-track reveal">
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 1<br>HTTP &amp; Web<br>Fundamentals</span>
-                    </div>
-                    <div class="milestone-connector"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 2<br>OWASP Top 10</span>
-                    </div>
-                    <div class="milestone-connector"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 3<br>Burp Suite<br>&amp; Proxies</span>
-                    </div>
-                    <div class="milestone-connector"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 4<br>API &amp; Auth<br>Security</span>
-                    </div>
-                    <div class="milestone-connector"></div>
-                    <div class="milestone-step">
-                        <div class="milestone-node"></div>
-                        <span class="milestone-step-label">Stage 5<br>Bug Bounty<br>Ready</span>
-                    </div>
-                </div>
-
-                <div class="roadmap-list">
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 01</div>
-                        <div class="stage-content">
-                            <h3>HTTP &amp; Web Fundamentals</h3>
-                            <span class="stage-status upcoming"><i data-lucide="circle" style="width:12px;height:12px;"></i> Start Here</span>
-                            <p style="color:var(--gray);font-size:13px;line-height:1.65;max-width:650px;">HTTP/S methods, cookies, headers, sessions, same-origin policy, and web application architecture. The building blocks every web security professional needs.</p>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">HTTP/S Deep Dive</span>
-                                <span class="tag tag-muted">Web Cookies &amp; Sessions</span>
-                                <span class="tag tag-muted">Browser Dev Tools</span>
-                                <span class="tag tag-muted">JavaScript Basics</span>
+                        <div class="milestone-track-v2">
+                            <div class="milestone-step-v2 completed">
+                                <div class="milestone-node-v2"><i data-lucide="check" style="width:16px;height:16px;"></i></div>
+                                <div class="milestone-label-v2">Stage 1<br>Networking<br>Fundamentals</div>
+                            </div>
+                            <div class="milestone-connector-v2 completed"></div>
+                            <div class="milestone-step-v2 completed">
+                                <div class="milestone-node-v2"><i data-lucide="check" style="width:16px;height:16px;"></i></div>
+                                <div class="milestone-label-v2">Stage 2<br>Recon &amp;<br>Scanning</div>
+                            </div>
+                            <div class="milestone-connector-v2 completed"></div>
+                            <div class="milestone-step-v2 active">
+                                <div class="milestone-node-v2">3</div>
+                                <div class="milestone-label-v2">Stage 3<br>Exploitation</div>
+                            </div>
+                            <div class="milestone-connector-v2"></div>
+                            <div class="milestone-step-v2">
+                                <div class="milestone-node-v2">4</div>
+                                <div class="milestone-label-v2">Stage 4<br>Web App<br>Security</div>
+                            </div>
+                            <div class="milestone-connector-v2"></div>
+                            <div class="milestone-step-v2">
+                                <div class="milestone-node-v2">5</div>
+                                <div class="milestone-label-v2">Stage 5<br>Post-<br>Exploitation</div>
                             </div>
                         </div>
                     </div>
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 02</div>
-                        <div class="stage-content">
-                            <h3>OWASP Top 10 Vulnerabilities</h3>
-                            <span class="stage-status upcoming"><i data-lucide="circle" style="width:12px;height:12px;"></i> Upcoming</span>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">SQL Injection</span>
-                                <span class="tag tag-muted">Cross-Site Scripting (XSS)</span>
-                                <span class="tag tag-muted">IDOR &amp; Access Control</span>
-                                <span class="tag tag-muted">SSRF &amp; XXE</span>
+
+                    <!-- Module Cards Grid -->
+                    <div class="media-grid reveal">
+
+                        <!-- Stage 1 -->
+                        <div class="media-card">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#0d1117 0%,#161b22 100%);">
+                                <div class="media-card-img-placeholder" style="color:#58a6ff;">
+                                    <span style="font-size:52px;">🖧</span>
+                                </div>
+                                <span class="media-card-badge badge-green">Completed</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 1 · 12 Lectures</div>
+                                <div class="media-card-title">Networking Fundamentals & TCP/IP</div>
+                                <div class="media-card-desc">Master the OSI model, TCP/IP stack, subnetting, routing, and protocols. The non-negotiable foundation of every hacker.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">TCP/IP</span>
+                                    <span class="skill-pill">Subnetting</span>
+                                    <span class="skill-pill">Wireshark</span>
+                                    <span class="skill-pill">OSI Model</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                                <span class="media-card-platform">8 hrs</span>
+                                <a href="#" class="media-card-cta">Review <i data-lucide="arrow-up-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Stage 2 -->
+                        <div class="media-card">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#0e1117 0%,#1a2332 100%);">
+                                <div class="media-card-img-placeholder">
+                                    <span style="font-size:52px;">📡</span>
+                                </div>
+                                <span class="media-card-badge badge-green">Completed</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 2 · 15 Lectures</div>
+                                <div class="media-card-title">Reconnaissance & Network Scanning</div>
+                                <div class="media-card-desc">Passive and active recon techniques, Nmap mastery, OS fingerprinting, and OSINT gathering against live targets.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">Nmap</span>
+                                    <span class="skill-pill">Shodan</span>
+                                    <span class="skill-pill">OSINT</span>
+                                    <span class="skill-pill">Bash</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                                <span class="media-card-platform">10 hrs</span>
+                                <a href="#" class="media-card-cta">Review <i data-lucide="arrow-up-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Stage 3 (Active) -->
+                        <div class="media-card" style="border-color:var(--orange);box-shadow:0 0 0 2px rgba(232,130,46,0.15);">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#1a0800 0%,#2d1200 100%);">
+                                <div class="media-card-img-placeholder">
+                                    <span style="font-size:52px;">💣</span>
+                                </div>
+                                <span class="media-card-badge badge-orange">In Progress</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 3 · 18 Lectures</div>
+                                <div class="media-card-title">Exploitation Techniques with Metasploit</div>
+                                <div class="media-card-desc">Exploit development fundamentals, Metasploit framework deep dive, payload crafting, and post-exploitation pivoting.</div>
+                                <div class="progress-bar-wrap" style="margin-top:12px;">
+                                    <div class="progress-bar-header">
+                                        <span class="progress-bar-label">Progress</span>
+                                        <span class="progress-bar-pct">38%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill" style="width:38%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">Metasploit</span>
+                                    <span class="skill-pill">MSFvenom</span>
+                                    <span class="skill-pill">Exploitation</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                                <span class="media-card-platform">14 hrs</span>
+                                <button class="resume-btn">Resume <i data-lucide="play"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Stage 4 (Locked) -->
+                        <div class="media-card" style="opacity:0.65;">
+                            <div class="media-card-img" style="background:var(--dark-gray);">
+                                <div class="media-card-img-placeholder" style="color:#555;">
+                                    <i data-lucide="lock" style="width:48px;height:48px;"></i>
+                                </div>
+                                <span class="media-card-badge badge-black">Locked</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 4 · 20 Lectures</div>
+                                <div class="media-card-title">Web Application Security & Bug Bounty</div>
+                                <div class="media-card-desc">XSS, SQLi, SSRF, IDOR, CSRF attacks against real-world web applications. OWASP Top 10 in practice with Burp Suite Pro.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">Burp Suite</span>
+                                    <span class="skill-pill">OWASP Top 10</span>
+                                    <span class="skill-pill">SQLMap</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 5.0</div>
+                                <span class="media-card-platform">16 hrs</span>
+                                <button class="media-card-cta" style="background:var(--gray);cursor:not-allowed;"><i data-lucide="lock" style="width:12px;height:12px;"></i> Locked</button>
+                            </div>
+                        </div>
+
+                        <!-- Stage 5 (Locked) -->
+                        <div class="media-card" style="opacity:0.65;">
+                            <div class="media-card-img" style="background:var(--dark-gray);">
+                                <div class="media-card-img-placeholder" style="color:#555;">
+                                    <i data-lucide="lock" style="width:48px;height:48px;"></i>
+                                </div>
+                                <span class="media-card-badge badge-black">Locked</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 5 · 16 Lectures</div>
+                                <div class="media-card-title">Post-Exploitation & Persistence</div>
+                                <div class="media-card-desc">Privilege escalation on Linux and Windows, establishing persistence, lateral movement, data exfiltration, and covering tracks.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">PrivEsc</span>
+                                    <span class="skill-pill">PowerShell</span>
+                                    <span class="skill-pill">Mimikatz</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★☆</span> 4.7</div>
+                                <span class="media-card-platform">12 hrs</span>
+                                <button class="media-card-cta" style="background:var(--gray);cursor:not-allowed;"><i data-lucide="lock" style="width:12px;height:12px;"></i> Locked</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ═══ PANEL: SOC ANALYST ═══ -->
+                <div class="path-panel" id="panel-soc">
+
+                    <div class="reveal">
+                        <div class="interior-section-header">
+                            <div>
+                                <div class="section-number">02 / SOC ANALYST</div>
+                                <h2 style="margin-top:8px;">SOC Analyst & <span>Threat Monitoring</span></h2>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:11px;color:var(--gray);">Duration: 8 Months &nbsp;·&nbsp; 5 Stages</div>
+                                <div style="margin-top:6px;"><span class="status-badge in-progress">Stage 3 Active</span></div>
+                            </div>
+                        </div>
+
+                        <div class="milestone-track-v2">
+                            <div class="milestone-step-v2 completed">
+                                <div class="milestone-node-v2"><i data-lucide="check" style="width:16px;height:16px;"></i></div>
+                                <div class="milestone-label-v2">Stage 1<br>Security<br>Foundations</div>
+                            </div>
+                            <div class="milestone-connector-v2 completed"></div>
+                            <div class="milestone-step-v2 completed">
+                                <div class="milestone-node-v2"><i data-lucide="check" style="width:16px;height:16px;"></i></div>
+                                <div class="milestone-label-v2">Stage 2<br>Network<br>Defense</div>
+                            </div>
+                            <div class="milestone-connector-v2 completed"></div>
+                            <div class="milestone-step-v2 active">
+                                <div class="milestone-node-v2">3</div>
+                                <div class="milestone-label-v2">Stage 3<br>Threat<br>Detection</div>
+                            </div>
+                            <div class="milestone-connector-v2"></div>
+                            <div class="milestone-step-v2">
+                                <div class="milestone-node-v2">4</div>
+                                <div class="milestone-label-v2">Stage 4<br>Incident<br>Response</div>
+                            </div>
+                            <div class="milestone-connector-v2"></div>
+                            <div class="milestone-step-v2">
+                                <div class="milestone-node-v2">5</div>
+                                <div class="milestone-label-v2">Stage 5<br>SIEM &amp;<br>Automation</div>
                             </div>
                         </div>
                     </div>
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 03</div>
-                        <div class="stage-content">
-                            <h3>Burp Suite &amp; Proxy Tools</h3>
-                            <span class="stage-status upcoming"><i data-lucide="circle" style="width:12px;height:12px;"></i> Upcoming</span>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">Burp Suite Professional</span>
-                                <span class="tag tag-muted">OWASP ZAP</span>
-                                <span class="tag tag-muted">Intercept &amp; Modify Requests</span>
-                                <span class="tag tag-muted">Automated Scanning</span>
+
+                    <div class="media-grid reveal">
+                        <div class="media-card">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#0a1628 0%,#112240 100%);">
+                                <div class="media-card-img-placeholder"><span style="font-size:52px;">🏗️</span></div>
+                                <span class="media-card-badge badge-green">Completed</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 1 · 10 Lectures</div>
+                                <div class="media-card-title">Security Operations Foundations</div>
+                                <div class="media-card-desc">Core security concepts, CIA triad, security frameworks (NIST, ISO 27001), and the role of a SOC analyst in enterprise environments.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">NIST</span>
+                                    <span class="skill-pill">CIA Triad</span>
+                                    <span class="skill-pill">Risk Mgmt</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.8</div>
+                                <span class="media-card-platform">6 hrs</span>
+                                <a href="#" class="media-card-cta">Review <i data-lucide="arrow-up-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 04</div>
-                        <div class="stage-content">
-                            <h3>API &amp; Authentication Security</h3>
-                            <span class="stage-status upcoming"><i data-lucide="circle" style="width:12px;height:12px;"></i> Upcoming</span>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">REST API Testing</span>
-                                <span class="tag tag-muted">JWT Attacks</span>
-                                <span class="tag tag-muted">OAuth Misconfigs</span>
-                                <span class="tag tag-muted">MFA Bypasses</span>
+
+                        <div class="media-card">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#0a1a10 0%,#0d2218 100%);">
+                                <div class="media-card-img-placeholder"><span style="font-size:52px;">🔒</span></div>
+                                <span class="media-card-badge badge-green">Completed</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 2 · 13 Lectures</div>
+                                <div class="media-card-title">Network Defense & Firewall Architecture</div>
+                                <div class="media-card-desc">Firewall rules, IDS/IPS configuration, network segmentation, VPNs, and monitoring infrastructure with packet capture analysis.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">Firewall</span>
+                                    <span class="skill-pill">IDS/IPS</span>
+                                    <span class="skill-pill">Wireshark</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                                <span class="media-card-platform">9 hrs</span>
+                                <a href="#" class="media-card-cta">Review <i data-lucide="arrow-up-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="roadmap-stage reveal">
-                        <div class="stage-number">STAGE 05</div>
-                        <div class="stage-content">
-                            <h3>Bug Bounty Ready</h3>
-                            <span class="stage-status upcoming"><i data-lucide="circle" style="width:12px;height:12px;"></i> Upcoming</span>
-                            <div class="stage-skills">
-                                <span class="tag tag-muted">HackerOne / Bugcrowd</span>
-                                <span class="tag tag-muted">Report Writing</span>
-                                <span class="tag tag-muted">Responsible Disclosure</span>
-                                <span class="tag tag-muted">Chaining Vulnerabilities</span>
+
+                        <div class="media-card" style="border-color:var(--orange);box-shadow:0 0 0 2px rgba(232,130,46,0.15);">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#1a0800 0%,#2d1200 100%);">
+                                <div class="media-card-img-placeholder"><span style="font-size:52px;">📊</span></div>
+                                <span class="media-card-badge badge-orange">In Progress</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 3 · 17 Lectures</div>
+                                <div class="media-card-title">Threat Detection & Log Analysis</div>
+                                <div class="media-card-desc">Identify malicious activity in security logs, write detection rules in SIEM platforms, and distinguish real threats from false positives.</div>
+                                <div class="progress-bar-wrap" style="margin-top:12px;">
+                                    <div class="progress-bar-header">
+                                        <span class="progress-bar-label">Progress</span>
+                                        <span class="progress-bar-pct">68%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill" style="width:68%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">Splunk</span>
+                                    <span class="skill-pill">Sigma Rules</span>
+                                    <span class="skill-pill">Log Analysis</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 5.0</div>
+                                <span class="media-card-platform">13 hrs</span>
+                                <button class="resume-btn">Resume <i data-lucide="play"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div style="display:flex;justify-content:flex-end;margin-top:30px;" class="reveal">
-                    <a href="dashboard.html" class="btn-primary">
-                        Track in Dashboard
-                        <i data-lucide="arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+                <!-- ═══ PANEL: WEB APP SECURITY ═══ -->
+                <div class="path-panel" id="panel-webapp">
 
-        <!-- CTA -->
-        <section class="cta-section" style="padding-top:0;">
-            <div class="container">
-                <div class="cta-box reveal">
-                    <div class="cta-content">
-                        <div class="eyebrow">START YOUR PATH</div>
-                        <h2>Choose your<br><span>mission.</span></h2>
-                        <p>Pick a roadmap, track your progress on the dashboard, and build the skills the industry actually needs.</p>
-                        <a href="dashboard.html" class="btn-primary">
-                            Go to Dashboard
-                            <i data-lucide="arrow-right"></i>
-                        </a>
+                    <div class="reveal">
+                        <div class="interior-section-header">
+                            <div>
+                                <div class="section-number">03 / WEB APP SECURITY</div>
+                                <h2 style="margin-top:8px;">Web Application <span>Security Testing</span></h2>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:11px;color:var(--gray);">Duration: 5 Months &nbsp;·&nbsp; 4 Stages</div>
+                                <div style="margin-top:6px;"><span class="status-badge in-progress">Stage 2 Active</span></div>
+                            </div>
+                        </div>
+
+                        <div class="milestone-track-v2">
+                            <div class="milestone-step-v2 completed">
+                                <div class="milestone-node-v2"><i data-lucide="check" style="width:16px;height:16px;"></i></div>
+                                <div class="milestone-label-v2">Stage 1<br>HTTP &amp;<br>Web Basics</div>
+                            </div>
+                            <div class="milestone-connector-v2 completed"></div>
+                            <div class="milestone-step-v2 active">
+                                <div class="milestone-node-v2">2</div>
+                                <div class="milestone-label-v2">Stage 2<br>OWASP<br>Top 10</div>
+                            </div>
+                            <div class="milestone-connector-v2"></div>
+                            <div class="milestone-step-v2">
+                                <div class="milestone-node-v2">3</div>
+                                <div class="milestone-label-v2">Stage 3<br>Burp Suite<br>Advanced</div>
+                            </div>
+                            <div class="milestone-connector-v2"></div>
+                            <div class="milestone-step-v2">
+                                <div class="milestone-node-v2">4</div>
+                                <div class="milestone-label-v2">Stage 4<br>Bug Bounty<br>Hunting</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-grid reveal">
+                        <div class="media-card">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#0a1628 0%,#1a2d50 100%);">
+                                <div class="media-card-img-placeholder"><span style="font-size:52px;">🌐</span></div>
+                                <span class="media-card-badge badge-green">Completed</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 1 · 11 Lectures</div>
+                                <div class="media-card-title">HTTP Protocol & Web Architecture</div>
+                                <div class="media-card-desc">HTTP/HTTPS deep dive, cookies, sessions, authentication flows, REST APIs, and web proxy fundamentals with Burp Suite.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">HTTP/S</span>
+                                    <span class="skill-pill">Cookies</span>
+                                    <span class="skill-pill">Burp Suite</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                                <span class="media-card-platform">7 hrs</span>
+                                <a href="#" class="media-card-cta">Review <i data-lucide="arrow-up-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="media-card" style="border-color:var(--orange);box-shadow:0 0 0 2px rgba(232,130,46,0.15);">
+                            <div class="media-card-img" style="background:linear-gradient(135deg,#1a0800 0%,#2d1200 100%);">
+                                <div class="media-card-img-placeholder"><span style="font-size:52px;">⚠️</span></div>
+                                <span class="media-card-badge badge-orange">In Progress</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 2 · 20 Lectures</div>
+                                <div class="media-card-title">OWASP Top 10 Vulnerabilities in Practice</div>
+                                <div class="media-card-desc">Hands-on exploitation of SQLi, XSS, CSRF, SSRF, IDOR, XXE, and broken auth against DVWA and HackTheBox environments.</div>
+                                <div class="progress-bar-wrap" style="margin-top:12px;">
+                                    <div class="progress-bar-header">
+                                        <span class="progress-bar-label">Progress</span>
+                                        <span class="progress-bar-pct">32%</span>
+                                    </div>
+                                    <div class="progress-bar-track">
+                                        <div class="progress-bar-fill" style="width:32%;"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">SQLi</span>
+                                    <span class="skill-pill">XSS</span>
+                                    <span class="skill-pill">OWASP Top 10</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 5.0</div>
+                                <span class="media-card-platform">15 hrs</span>
+                                <button class="resume-btn">Resume <i data-lucide="play"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="media-card" style="opacity:0.65;">
+                            <div class="media-card-img" style="background:var(--dark-gray);">
+                                <div class="media-card-img-placeholder" style="color:#555;">
+                                    <i data-lucide="lock" style="width:48px;height:48px;"></i>
+                                </div>
+                                <span class="media-card-badge badge-black">Locked</span>
+                            </div>
+                            <div class="media-card-body">
+                                <div class="media-card-category">Stage 3 · 18 Lectures</div>
+                                <div class="media-card-title">Burp Suite Advanced & Custom Extensions</div>
+                                <div class="media-card-desc">Active scanning, custom Burp extensions in Python/Java, Intruder fuzzing, Collaborator, and advanced session handling.</div>
+                                <div class="skill-pills">
+                                    <span class="skill-pill">Burp Pro</span>
+                                    <span class="skill-pill">Python</span>
+                                    <span class="skill-pill">Fuzzing</span>
+                                </div>
+                            </div>
+                            <div class="media-card-meta">
+                                <div class="media-card-rating"><span class="stars">★★★★★</span> 4.9</div>
+                                <span class="media-card-platform">13 hrs</span>
+                                <button class="media-card-cta" style="background:var(--gray);cursor:not-allowed;"><i data-lucide="lock" style="width:12px;height:12px;"></i> Locked</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-top">
@@ -433,39 +536,54 @@
                         <div class="logo-symbol">CM</div>
                         <span class="logo-text">CYBER<span>M</span></span>
                     </a>
-                    <p>An all-in-one cybersecurity workspace for people who learn, research, build, test and defend.</p>
+                    <p>The free, open cybersecurity workspace. Learn, research, and defend without barriers.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>PLATFORM</h4>
+                    <h4>Platform</h4>
                     <a href="roadmaps.html">Roadmaps</a>
-                    <a href="tools.html">Security Tools</a>
-                    <a href="utilities.html">Utilities</a>
+                    <a href="tools.html">Tools</a>
                     <a href="guides.html">Guides</a>
+                    <a href="news.html">News</a>
                 </div>
                 <div class="footer-column">
-                    <h4>LEARN</h4>
-                    <a href="resources.html">Resources</a>
-                    <a href="news.html">Security News</a>
-                    <a href="guides.html">Tutorials</a>
-                    <a href="dashboard.html">Dashboard</a>
-                </div>
-                <div class="footer-column">
-                    <h4>COMPANY</h4>
+                    <h4>Company</h4>
                     <a href="about.html">About</a>
                     <a href="contact.html">Contact</a>
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>© 2026 CYBERM</span>
-                <span>BUILT FOR THE SECURITY COMMUNITY</span>
+                <span>© 2026 CYBERM. Built for the community.</span>
+                <span>Protect. Learn. Defend.</span>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function switchPath(id, btn) {
+            // Deactivate all panels and tabs
+            document.querySelectorAll('.path-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.path-tab').forEach(t => t.classList.remove('active'));
+            // Activate selected
+            document.getElementById('panel-' + id).classList.add('active');
+            btn.classList.add('active');
+            // Re-run reveal for newly visible elements
+            document.querySelectorAll('#panel-' + id + ' .reveal').forEach(el => {
+                el.classList.remove('visible');
+                setTimeout(() => el.classList.add('visible'), 50);
+            });
+            lucide.createIcons();
+        }
+        // Initialize reveals for the default active panel
+        setTimeout(() => {
+            document.querySelectorAll('#panel-hacking .reveal').forEach(el => el.classList.add('visible'));
+        }, 200);
+    </script>
 
 </body>
-
 </html>
